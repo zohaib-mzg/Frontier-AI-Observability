@@ -1,20 +1,21 @@
+```yaml
 name: Frontier data collector
 
 on:
-  # Monday, Wednesday and Friday at 03:00 UTC (08:00 Pakistan time)
   schedule:
     - cron: "0 3 * * 1,3,5"
-  # The "Run workflow" button on the Actions page
+
   workflow_dispatch:
     inputs:
       mode:
-        description: "smoke = test only | full = one-time history (min 400 MB) | incremental = changes only (min 1 MB)"
+        description: "smoke = connectivity test | incremental = new changes | full = initial history load"
         type: choice
         options:
           - smoke
           - incremental
           - full
         default: smoke
+        required: true
 
 permissions:
   contents: read
@@ -24,99 +25,279 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  # Scheduled runs have no button input, so they always do an incremental load
   MODE: ${{ github.event.inputs.mode || 'incremental' }}
-  # Where the files go in Databricks (change "workspace" if your catalog has another name)
   VOLUME: dbfs:/Volumes/workspace/landing/staging/frontier
 
 jobs:
   collect:
+    name: Collect and upload Frontier data
     runs-on: ubuntu-latest
     timeout-minutes: 180
+
     defaults:
       run:
         shell: bash
+
     env:
       DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
       DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
       HF_TOKEN: ${{ secrets.HF_TOKEN }}
 
     steps:
-      - name: Get the code
+      - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Install Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
           cache: pip
 
-      - name: Install Python packages
-        run: pip install -r requirements.txt
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
       - name: Install Databricks CLI
         uses: databricks/setup-cli@v0.299.0
 
-      - name: Check the Databricks connection
-        run: databricks fs ls "$VOLUME"
-
-      - name: Full load safety check (only allowed once)
-        if: env.MODE == 'full'
+      - name: Validate required configuration
         run: |
-          if databricks fs ls "$VOLUME/_state/state.json" > /dev/null 2>&1; then
-            echo "A full load was already done (state.json exists). Stopping so data is not loaded twice."
+          if [ -z "${DATABRICKS_HOST:-}" ]; then
+            echo "::error::GitHub secret DATABRICKS_HOST is missing."
             exit 1
           fi
 
-      - name: Download the last state
+          if [ -z "${DATABRICKS_TOKEN:-}" ]; then
+            echo "::error::GitHub secret DATABRICKS_TOKEN is missing."
+            exit 1
+          fi
+
+      - name: Check Databricks connection and landing volume
+        run: |
+          echo "Checking Databricks connection..."
+          databricks fs ls "$VOLUME"
+
+      - name: Prepare output directories
+        run: |
+          mkdir -p output/logs
+          mkdir -p state
+
+      - name: Download previous state for incremental collection
         if: env.MODE == 'incremental'
         run: |
-          mkdir -p state
-          databricks fs cp "$VOLUME/_state/state.json" state/state.json
+          echo "Downloading previous collector state..."
 
-      - name: Collect data (smoke / full / incremental)
+          if ! databricks fs cp \
+            "$VOLUME/_state/state.json" \
+            state/state.json; then
+            echo "::error::Previous state was not found or could not be downloaded."
+            echo "Run the initial full load successfully before incremental collection."
+            exit 1
+          fi
+
+          test -s state/state.json
+
+      - name: Prevent duplicate initial full load
+        if: env.MODE == 'full'
         run: |
-          rc=0
-          python ingestion/frontier_collect.py --mode "$MODE" --out-dir output --state-in state/state.json || rc=$?
-          if [ "$rc" = "2" ]; then
-            # Volume rule not met (for example < 1 MB of changes on a quiet day): the collector already logged
-            # the refusal and did not move the state. Not an error for a scheduled run; changes keep accumulating.
-            echo "::warning::Batch refused by the volume rule. Nothing uploaded; the next run will include these changes."
-            rm -rf output/upload
+          if databricks fs ls "$VOLUME/_state/state.json" >/dev/null 2>&1; then
+            echo "::error::A collector state already exists. Refusing to repeat the initial full load."
+            echo "Inspect the existing state before deciding whether a reset is necessary."
+            exit 1
+          fi
+
+      - name: Collect data
+        id: collect
+        run: |
+          set +e
+
+          python ingestion/frontier_collect.py \
+            --mode "$MODE" \
+            --out-dir output \
+            --state-in state/state.json
+
+          rc=$?
+          set -e
+
+          echo "Collector exit code: $rc"
+
+          if [ "$rc" -eq 0 ]; then
+            echo "Collection completed successfully."
             exit 0
           fi
+
+          if [ "$rc" -eq 2 ]; then
+            if [ "$MODE" = "incremental" ]; then
+              echo "::notice::Incremental batch was rejected by the configured volume rule. No data or state will be uploaded."
+              rm -rf output/upload
+              echo "upload_ready=false" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+
+            echo "::error::The $MODE batch was rejected by the collector's validation or volume rule."
+            echo "Inspect the collector logs. No data or state should be uploaded."
+            rm -rf output/upload
+            exit 1
+          fi
+
+          echo "::error::Collector failed with exit code $rc."
           exit "$rc"
 
-      - name: Upload data, manifest and state to Databricks
+      - name: Verify staged files before upload
         if: success() && env.MODE != 'smoke'
         run: |
           if [ ! -d output/upload ]; then
-            echo "No new data this time. Nothing to upload."
-            exit 0
+            echo "::error::Collector succeeded but output/upload does not exist."
+            echo "Inspect ingestion/frontier_collect.py and the collector logs."
+            exit 1
           fi
-          cd output/upload
-          mapfile -t data_files < <(find new -type f ! -path 'new/_manifests/*' | sort)
-          for f in "${data_files[@]}"; do
-            databricks fs cp "$f" "$VOLUME/$f" --overwrite
-          done
-          # The manifest is the "batch is complete" marker, so it goes up after all data files
-          mapfile -t manifests < <(find new/_manifests -type f | sort)
-          for f in "${manifests[@]}"; do
-            databricks fs cp "$f" "$VOLUME/$f" --overwrite
-          done
-          # The state is saved LAST, only after everything above worked
-          databricks fs cp _state/state.json "$VOLUME/_state/state.json" --overwrite
 
-      - name: Send the error log and run summary to Databricks (always)
+          echo "Staged files:"
+          find output/upload -type f -printf '%p (%s bytes)\n' | sort
+
+          if [ ! -d output/upload/new ]; then
+            echo "::error::Expected output/upload/new directory is missing."
+            exit 1
+          fi
+
+          if [ "$MODE" = "full" ] && [ ! -d output/upload/new/arena ]; then
+            echo "::error::Full load is missing output/upload/new/arena."
+            echo "The full batch is incomplete; refusing to upload."
+            exit 1
+          fi
+
+          if ! find output/upload/new -type f \
+            ! -path 'output/upload/new/_manifests/*' \
+            | grep -q .; then
+            echo "::error::No data files were staged."
+            exit 1
+          fi
+
+          if [ ! -d output/upload/new/_manifests ]; then
+            echo "::error::The manifest directory is missing."
+            exit 1
+          fi
+
+          if ! find output/upload/new/_manifests -type f | grep -q .; then
+            echo "::error::No manifest files were staged."
+            exit 1
+          fi
+
+          if [ ! -f output/upload/_state/state.json ]; then
+            echo "::error::The new state file is missing."
+            exit 1
+          fi
+
+          echo "Staging validation passed."
+
+      - name: Upload data files to Databricks
+        if: success() && env.MODE != 'smoke'
+        run: |
+          set -euo pipefail
+
+          if [ ! -d output/upload ]; then
+            echo "::error::Cannot upload because output/upload is missing."
+            exit 1
+          fi
+
+          cd output/upload
+
+          mapfile -t data_files < <(
+            find new -type f \
+              ! -path 'new/_manifests/*' \
+              | sort
+          )
+
+          if [ "${#data_files[@]}" -eq 0 ]; then
+            echo "::error::No data files found to upload."
+            exit 1
+          fi
+
+          for f in "${data_files[@]}"; do
+            echo "Uploading $f"
+            databricks fs cp "$f" "$VOLUME/$f" --overwrite
+          done
+
+          echo "All data files uploaded."
+
+      - name: Upload manifests after data files
+        if: success() && env.MODE != 'smoke'
+        run: |
+          set -euo pipefail
+
+          cd output/upload
+
+          mapfile -t manifests < <(
+            find new/_manifests -type f | sort
+          )
+
+          if [ "${#manifests[@]}" -eq 0 ]; then
+            echo "::error::No manifests found to upload."
+            exit 1
+          fi
+
+          for f in "${manifests[@]}"; do
+            echo "Uploading manifest $f"
+            databricks fs cp "$f" "$VOLUME/$f" --overwrite
+          done
+
+          echo "All manifests uploaded."
+
+      - name: Upload collector state last
+        if: success() && env.MODE != 'smoke'
+        run: |
+          set -euo pipefail
+
+          if [ ! -f output/upload/_state/state.json ]; then
+            echo "::error::State file is missing; refusing to advance collector state."
+            exit 1
+          fi
+
+          echo "Uploading state file last..."
+          databricks fs cp \
+            output/upload/_state/state.json \
+            "$VOLUME/_state/state.json" \
+            --overwrite
+
+          echo "Collector state uploaded."
+
+      - name: Verify uploaded landing directories
+        if: success() && env.MODE != 'smoke'
+        run: |
+          echo "Listing landing directory:"
+          databricks fs ls "$VOLUME/new"
+
+          echo "Listing Arena directory:"
+          if databricks fs ls "$VOLUME/new/arena"; then
+            echo "Arena directory is accessible."
+          elif [ "$MODE" = "full" ]; then
+            echo "::error::Full load finished, but the Arena directory is not accessible."
+            exit 1
+          else
+            echo "::notice::Arena directory is absent. This may be expected for an incremental batch that did not include Arena data."
+          fi
+
+          echo "Listing manifests:"
+          databricks fs ls "$VOLUME/new/_manifests"
+
+      - name: Upload collector logs to Databricks
         if: always()
         continue-on-error: true
         run: |
           shopt -s nullglob
+
           for f in output/logs/*; do
-            databricks fs cp "$f" "$VOLUME/logs/pending/$(basename "$f")" --overwrite
+            [ -f "$f" ] || continue
+
+            echo "Uploading log $f"
+            databricks fs cp \
+              "$f" \
+              "$VOLUME/logs/pending/$(basename "$f")" \
+              --overwrite
           done
 
-      - name: Keep the logs for 30 days (always)
+      - name: Keep logs for 30 days
         if: always()
         uses: actions/upload-artifact@v4
         with:
