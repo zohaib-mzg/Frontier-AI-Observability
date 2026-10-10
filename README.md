@@ -145,9 +145,9 @@ Layers written to the log: `Source-to-Landing` (the GitHub collector, sent to Da
 ## 6. How to run
 
 ### One-time setup
-1. Databricks: run `notebooks/00_setup_databricks` once. It creates the volume `/Volumes/<catalog>/landing/staging/frontier` and its folders (the Bronze notebook creates the `bronze` and `ops` schemas itself).
+1. Databricks: run `notebooks/00_setup_databricks` once. It creates the schemas `landing`, `bronze`, `silver`, `gold`, `ops` (silver and gold stay empty), the volume `/Volumes/<catalog>/landing/staging/frontier` and its folders.
 2. GitHub: add secrets `DATABRICKS_HOST`, `DATABRICKS_TOKEN` (optional `HF_TOKEN`).
-3. Import the repo as a Databricks Git folder.
+3. Import the repo as a Databricks Git folder. The full click-by-click guide is `docs/Frontier_Bronze_Run_Guide.md`.
 
 ### Normal incremental load (Mon/Wed/Fri)
 - **Collect:** automatic every Monday, Wednesday and Friday at 03:00 UTC (08:00 Pakistan time), or Actions → *Frontier data collector* → *Run workflow* → `incremental`. (First time only: run `smoke`, then `full` once.)
@@ -183,7 +183,7 @@ Run `spark/bronze/frontier_bronze_proof` after the first full load and keep the 
 ## 7. Notes and limits
 - Bronze keeps original values; casting and cleaning happen in Silver.
 - **Schedule:** Mon/Wed/Fri was chosen after checking the sources: Epoch is updated daily, BenchLM 1-3 times a week, Arena and CooperBench irregularly. Three runs a week catch Epoch quickly and match BenchLM.
-- **Scheduled runs and the 1 MB rule:** when the changes are under 1 MB. The collector then refuses the batch (exit code 2), logs it, leaves the state untouched and removes the staged files. The workflow shows this as a **warning**, not a failure, and the changes are included in the next scheduled batch.
+- **Scheduled runs and the 1 MB rule:** on a run where the changes are under 1 MB, the collector refuses the batch (exit code 2), logs it, leaves the state untouched and removes the staged files. The workflow shows this as a **warning**, not a failure, and the changes are included in the next scheduled batch.
 - A day with no changes at all ends with "No changes since the last run" and uploads nothing.
 - BenchLM and Epoch are stored as full snapshots, but only when the file content changed (SHA-256), so unchanged days add no rows.
 - GitHub disables scheduled workflows after 60 days without repository activity; re-enable it on the Actions page if that happens.
