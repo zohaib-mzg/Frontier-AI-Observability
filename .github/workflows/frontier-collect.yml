@@ -87,7 +87,7 @@ jobs:
           fi
           exit "$rc"
 
-            - name: Upload data, manifest and state to Databricks
+      - name: Upload data, manifest and state to Databricks
         if: success() && env.MODE != 'smoke'
         run: |
           if [ ! -d output/upload ]; then
@@ -109,7 +109,7 @@ jobs:
           # The state is saved LAST, only after everything above worked
           databricks fs mkdir "$VOLUME/_state"
           databricks fs cp _state/state.json "$VOLUME/_state/state.json" --overwrite
-          
+
       - name: Send the error log and run summary to Databricks (always)
         if: always()
         continue-on-error: true
