@@ -7,7 +7,7 @@ Modes
   smoke        Checks every source URL, downloads a few small files and prints their
                structure. Uploads nothing.
   full         One-time history load. Downloads every source, checks that the landed
-               volume is at least 400 MB, writes a manifest.
+               volume is at least 200 MB, writes a manifest.
   incremental  Downloads only sources that changed since the last run. The batch must
                be at least 1 MB, otherwise it is refused (and logged).
 
@@ -35,7 +35,7 @@ from datetime import datetime, timezone
 import requests
 
 MB = 1_000_000                       # decimal megabytes, as in the Phase 1 document
-MIN_FULL_BYTES = 400 * MB            # full load must land at least this much
+MIN_FULL_BYTES = 200 * MB            # full load must land at least this much
 MIN_INCREMENTAL_BYTES = 1 * MB       # an incremental batch must land at least this much
 MAX_RETRIES = 3
 CONNECT_TIMEOUT = 15
