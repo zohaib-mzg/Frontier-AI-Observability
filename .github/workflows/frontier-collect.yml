@@ -87,7 +87,7 @@ jobs:
           fi
           exit "$rc"
 
-      - name: Upload data, manifest and state to Databricks
+            - name: Upload data, manifest and state to Databricks
         if: success() && env.MODE != 'smoke'
         run: |
           if [ ! -d output/upload ]; then
@@ -97,16 +97,19 @@ jobs:
           cd output/upload
           mapfile -t data_files < <(find new -type f ! -path 'new/_manifests/*' | sort)
           for f in "${data_files[@]}"; do
+            databricks fs mkdir "$VOLUME/$(dirname "$f")"
             databricks fs cp "$f" "$VOLUME/$f" --overwrite
           done
           # The manifest is the "batch is complete" marker, so it goes up after all data files
           mapfile -t manifests < <(find new/_manifests -type f | sort)
           for f in "${manifests[@]}"; do
+            databricks fs mkdir "$VOLUME/$(dirname "$f")"
             databricks fs cp "$f" "$VOLUME/$f" --overwrite
           done
           # The state is saved LAST, only after everything above worked
+          databricks fs mkdir "$VOLUME/_state"
           databricks fs cp _state/state.json "$VOLUME/_state/state.json" --overwrite
-
+          
       - name: Send the error log and run summary to Databricks (always)
         if: always()
         continue-on-error: true
