@@ -1,0 +1,11 @@
+# Secrets - never commit these
+.env
+*.token
+secrets*
+
+# Files made while testing
+output/
+state/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
