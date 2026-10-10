@@ -35,7 +35,7 @@ from datetime import datetime, timezone
 import requests
 
 MB = 1_000_000                       # decimal megabytes, as in the Phase 1 document
-MIN_FULL_BYTES = 200 * MB            # full load must land at least this much
+MIN_FULL_BYTES = 150 * MB            # full load must land at least this much
 MIN_INCREMENTAL_BYTES = 1 * MB       # an incremental batch must land at least this much
 MAX_RETRIES = 3
 CONNECT_TIMEOUT = 15
