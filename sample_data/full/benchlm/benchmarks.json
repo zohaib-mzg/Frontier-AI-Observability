@@ -1,0 +1,440 @@
+{
+  "schemaVersion": "1.0",
+  "name": "BenchLM benchmark definitions",
+  "description": "Benchmark metadata, scoring weights, and model-score coverage counts.",
+  "canonicalUrl": "https://benchlm.ai/data/benchmarks.json",
+  "license": "CC BY-NC 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+  "commercialUse": "Not permitted without a license from BenchLM: https://benchlm.ai/contact",
+  "attribution": "Data from BenchLM.ai",
+  "generatedAt": "2026-10-01T17:31:32.160Z",
+  "sourceLastUpdated": "October 1, 2026",
+  "sourceFiles": [
+    "src/data/benchmark_descriptions.json",
+    "src/data/scaleLeaderboards.js",
+    "src/data/rampAccountingBench.js",
+    "src/data/scoring.js"
+  ],
+  "sourceAttributions": {
+    "jevBench14": {
+      "projectName": "JevBench",
+      "authorName": "Florian Standhartinger",
+      "authorUrl": "https://github.com/fstandhartinger",
+      "projectUrl": "https://github.com/fstandhartinger/jevbench",
+      "sourceCommit": "5b405e7e4efff2cfbbb2fe67db9b0cbad0704b8d",
+      "copyright": "Copyright (c) 2026 Florian Standhartinger and contributors",
+      "license": "MIT",
+      "licenseUrl": "https://github.com/fstandhartinger/jevbench/blob/5b405e7e4efff2cfbbb2fe67db9b0cbad0704b8d/LICENSE",
+      "licenseNoticePath": "/licenses/jevbench-mit.txt",
+      "licenseNoticeUrl": "https://benchlm.ai/licenses/jevbench-mit.txt",
+      "licenseText": "MIT License\n\nCopyright (c) 2026 Florian Standhartinger and contributors\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+      "scope": "JevBench source material retains its upstream license. Evaluated model weights, external code, and upstream datasets retain their own licenses."
+    },
+    "jevBench15": {
+      "projectName": "JevBench",
+      "authorName": "Florian Standhartinger",
+      "authorUrl": "https://github.com/fstandhartinger",
+      "projectUrl": "https://github.com/fstandhartinger/jevbench",
+      "sourceCommit": "bb05a335bc809e61b20c0f745d25499a82b326fc",
+      "copyright": "Copyright (c) 2026 Florian Standhartinger and contributors",
+      "license": "MIT",
+      "licenseUrl": "https://github.com/fstandhartinger/jevbench/blob/bb05a335bc809e61b20c0f745d25499a82b326fc/LICENSE",
+      "licenseNoticePath": "/licenses/jevbench-mit.txt",
+      "licenseNoticeUrl": "https://benchlm.ai/licenses/jevbench-mit.txt",
+      "licenseText": "MIT License\n\nCopyright (c) 2026 Florian Standhartinger and contributors\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+      "scope": "The MIT notice applies to JevBench source code and method documentation. Aggregate results come from Benchmark Heaven's public versioned API. Evaluated model weights, external code, upstream datasets, and other third-party data retain their own terms.",
+      "resultsSourceUrl": "https://benchmarkheaven.com/api/jevbench/v1.5.4",
+      "resultsSha256": "0cf210b76bf85084a5f3fb40fb109e9a2c2f93df42ff6628696377666e89db45",
+      "apiDocumentationUrl": "https://github.com/fstandhartinger/model-market-comparison/blob/main/API.md",
+      "termsUrl": "https://benchmarkheaven.com/terms"
+    },
+    "valsAi": {
+      "publisher": "Vals AI",
+      "publisherUrl": "https://www.vals.ai/",
+      "sourceLabel": "Vals AI",
+      "sourceRole": "published-evaluation-results",
+      "scope": "Published leaderboard aggregates and evaluation settings only. Dataset contents are not included.",
+      "datasetContentsIncluded": false,
+      "licenseGrantIncluded": false,
+      "benchmarks": {
+        "emb": {
+          "name": "EMB",
+          "sourceUrl": "https://www.vals.ai/benchmarks/emb",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "cyber": {
+          "name": "CyberBench",
+          "sourceUrl": "https://www.vals.ai/benchmarks/cyber",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsIndex": {
+          "name": "Vals Index",
+          "sourceUrl": "https://www.vals.ai/benchmarks/vals_index",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsRsiIndex": {
+          "name": "Vals RSI Index",
+          "sourceUrl": "https://www.vals.ai/benchmarks/rsi_index",
+          "capturedAt": "2026-10-01T03:28:11.403Z"
+        },
+        "valsWebSearchIndex": {
+          "name": "Web Search Index",
+          "sourceUrl": "https://www.vals.ai/benchmarks/web_search",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsTimeHorizonKsp": {
+          "name": "Time Horizon Index: KSP",
+          "sourceUrl": "https://www.vals.ai/benchmarks/time_horizon_index",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsCuaBench": {
+          "name": "CUA-bench",
+          "sourceUrl": "https://www.vals.ai/benchmarks/cua_bench",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "voiceCodeBench": {
+          "name": "VoiceCodeBench",
+          "sourceUrl": "https://www.vals.ai/benchmarks/voice-code-bench",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsBioMysteryBench": {
+          "name": "BioMysteryBench",
+          "sourceUrl": "https://www.vals.ai/benchmarks/biomysterybench",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "financeAgentV2": {
+          "name": "Finance Agent v2",
+          "sourceUrl": "https://www.vals.ai/benchmarks/fabv2",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsFinanceAgentV1": {
+          "name": "Finance Agent v1.1",
+          "sourceUrl": "https://www.vals.ai/benchmarks/finance_agent",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "vibeCodeBench": {
+          "name": "Vibe Code Bench v1.1",
+          "sourceUrl": "https://www.vals.ai/benchmarks/vibe-code",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "vibeCodeBench1To100": {
+          "name": "Vibe Code Bench 1-100",
+          "sourceUrl": "https://www.vals.ai/benchmarks/vcb-1-100",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsMedScribe": {
+          "name": "MedScribe",
+          "sourceUrl": "https://www.vals.ai/benchmarks/medscribe",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "taxEvalV2": {
+          "name": "TaxEval v2",
+          "sourceUrl": "https://www.vals.ai/benchmarks/tax_eval_v2",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsTaxAgentBench": {
+          "name": "Tax Agent Bench",
+          "sourceUrl": "https://www.vals.ai/benchmarks/tax_agent_bench",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "hlab": {
+          "name": "Harvey's Legal Agent Benchmark",
+          "sourceUrl": "https://www.vals.ai/benchmarks/hlab",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsSweBench": {
+          "name": "Vals SWE-bench mirror",
+          "sourceUrl": "https://www.vals.ai/benchmarks/swebench",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsLiveCodeBench": {
+          "name": "Vals LiveCodeBench mirror",
+          "sourceUrl": "https://www.vals.ai/benchmarks/lcb",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsTerminalBench21": {
+          "name": "Vals Terminal-Bench 2.1 mirror",
+          "sourceUrl": "https://www.vals.ai/benchmarks/terminal-bench-2-1",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsTerminalBench4": {
+          "name": "Vals Terminal-Bench 4.0 mirror",
+          "sourceUrl": "https://www.vals.ai/benchmarks/terminal-bench-4",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsTerminalBenchScience": {
+          "name": "Vals Terminal-Bench Science mirror",
+          "sourceUrl": "https://www.vals.ai/benchmarks/terminal-bench-science",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsGpqaDiamond": {
+          "name": "Vals GPQA Diamond mirror",
+          "sourceUrl": "https://www.vals.ai/benchmarks/gpqa",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsCorpFinV2": {
+          "name": "CorpFin v2",
+          "sourceUrl": "https://www.vals.ai/benchmarks/corp_fin_v2",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsMultimodalIndex": {
+          "name": "Vals Multimodal Index",
+          "sourceUrl": "https://www.vals.ai/benchmarks/vals_multimodal_index",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "codeMigration": {
+          "name": "Code Migration",
+          "sourceUrl": "https://www.vals.ai/benchmarks/code-migration",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsReverseEngBench": {
+          "name": "SRE Bench",
+          "sourceUrl": "https://www.vals.ai/benchmarks/srebench",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "legalResearchBench": {
+          "name": "Legal Research Bench",
+          "sourceUrl": "https://www.vals.ai/benchmarks/legal_research",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsLegalBench": {
+          "name": "LegalBench",
+          "sourceUrl": "https://www.vals.ai/benchmarks/legal_bench",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsCaseLawV2": {
+          "name": "CaseLaw v2",
+          "sourceUrl": "https://www.vals.ai/benchmarks/case_law_v2",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsMortgageTax": {
+          "name": "MortgageTax",
+          "sourceUrl": "https://www.vals.ai/benchmarks/mortgage_tax",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsMedCode": {
+          "name": "MedCode",
+          "sourceUrl": "https://www.vals.ai/benchmarks/medcode",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsMedQa": {
+          "name": "MedQA",
+          "sourceUrl": "https://www.vals.ai/benchmarks/medqa",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsProofBench": {
+          "name": "ProofBench",
+          "sourceUrl": "https://www.vals.ai/benchmarks/proof_bench",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "mysteryMechanism": {
+          "name": "MysteryMechanism",
+          "sourceUrl": "https://www.vals.ai/benchmarks/mysterymechanism",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsAime": {
+          "name": "AIME",
+          "sourceUrl": "https://www.vals.ai/benchmarks/aime",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsMath500": {
+          "name": "MATH 500",
+          "sourceUrl": "https://www.vals.ai/benchmarks/math500",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsMgsm": {
+          "name": "MGSM",
+          "sourceUrl": "https://www.vals.ai/benchmarks/mgsm",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsMmluPro": {
+          "name": "Vals MMLU-Pro mirror",
+          "sourceUrl": "https://www.vals.ai/benchmarks/mmlu_pro",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsMmmu": {
+          "name": "MMMU",
+          "sourceUrl": "https://www.vals.ai/benchmarks/mmmu",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "sage": {
+          "name": "SAGE",
+          "sourceUrl": "https://www.vals.ai/benchmarks/sage",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsIoi": {
+          "name": "IOI",
+          "sourceUrl": "https://www.vals.ai/benchmarks/ioi",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsIoiV1": {
+          "name": "IOI v1 (archived)",
+          "sourceUrl": "https://www.vals.ai/benchmarks/ioi-v1",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsProgramBench": {
+          "name": "Vals ProgramBench mirror",
+          "sourceUrl": "https://www.vals.ai/benchmarks/programbench",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "skillsBench": {
+          "name": "SkillsBench",
+          "sourceUrl": "https://www.vals.ai/benchmarks/skillsbench",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsTerminalBench2": {
+          "name": "Vals Terminal-Bench 2.0 mirror",
+          "sourceUrl": "https://www.vals.ai/benchmarks/terminal-bench-2",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsTerminalBench1": {
+          "name": "Vals Terminal-Bench 1.0 mirror",
+          "sourceUrl": "https://www.vals.ai/benchmarks/terminal-bench",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "pokerAgent": {
+          "name": "Agent Poker Bench",
+          "sourceUrl": "https://www.vals.ai/benchmarks/poker_agent",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "publicBenefitsBench": {
+          "name": "Public Benefits Bench v1.1",
+          "sourceUrl": "https://www.vals.ai/benchmarks/snap",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "publicBenefitsBenchV1": {
+          "name": "Public Benefits Bench v1",
+          "sourceUrl": "https://www.vals.ai/benchmarks/public-benefits-bench-v1",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        }
+      }
+    }
+  },
+  "counts": {
+    "categories": 10,
+    "benchmarks": 508
+  },
+  "items": [
+    {
+      "category": "knowledge",
+      "categoryLabel": "Knowledge",
+      "benchmarkKey": "healthBench",
+      "name": "HealthBench (raw)",
+      "fullName": "HealthBench raw score",
+      "description": "Raw score on realistic multi-turn healthcare conversations graded against expert-written rubrics.",
+      "paperUrl": "https://www-cdn.anthropic.com/c5fbac3f0b1280a933ebd26d3cb8bb9f5bdeaf48/Claude%20Opus%205%20System%20Card.pdf",
+      "paperTitle": "Claude Opus 5 System Card",
+      "authors": "Anthropic",
+      "year": "2026",
+      "tasks": "5,000 multi-turn patient conversations",
+      "format": "Raw rubric score",
+      "difficulty": "Realistic healthcare conversations",
+      "decimals": 1,
+      "successorKey": null,
+      "successorUrl": null,
+      "weight": null,
+      "scoringBasis": null,
+      "scoredCategory": null,
+      "displayableScoreCount": 7,
+      "url": "https://benchlm.ai/benchmarks/healthbench",
+      "markdownUrl": "https://benchlm.ai/md/benchmarks/healthbench.md"
+    },
+    {
+      "category": "knowledge",
+      "categoryLabel": "Knowledge",
+      "benchmarkKey": "healthBenchLengthAdjusted",
+      "name": "HealthBench (length-adjusted)",
+      "fullName": "HealthBench length-adjusted score",
+      "description": "HealthBench score after applying a verbosity penalty to model responses.",
+      "paperUrl": "https://www-cdn.anthropic.com/c5fbac3f0b1280a933ebd26d3cb8bb9f5bdeaf48/Claude%20Opus%205%20System%20Card.pdf",
+      "paperTitle": "Claude Opus 5 System Card",
+      "authors": "Anthropic",
+      "year": "2026",
+      "tasks": "5,000 multi-turn patient conversations",
+      "format": "Length-adjusted rubric score",
+      "difficulty": "Realistic healthcare conversations",
+      "decimals": 1,
+      "successorKey": null,
+      "successorUrl": null,
+      "weight": null,
+      "scoringBasis": null,
+      "scoredCategory": null,
+      "displayableScoreCount": 7,
+      "url": "https://benchlm.ai/benchmarks/healthbenchlengthadjusted",
+      "markdownUrl": "https://benchlm.ai/md/benchmarks/healthbenchlengthadjusted.md"
+    },
+    {
+      "category": "knowledge",
+      "categoryLabel": "Knowledge",
+      "benchmarkKey": "healthBenchProfessionalRaw",
+      "name": "HealthBench Professional (raw)",
+      "fullName": "HealthBench Professional raw score",
+      "description": "Raw score on physician-authored clinical consult, documentation, and research conversations.",
+      "paperUrl": "https://www-cdn.anthropic.com/c5fbac3f0b1280a933ebd26d3cb8bb9f5bdeaf48/Claude%20Opus%205%20System%20Card.pdf",
+      "paperTitle": "Claude Opus 5 System Card",
+      "authors": "Anthropic",
+      "year": "2026",
+      "tasks": "525 physician-authored conversations",
+      "format": "Raw rubric score",
+      "difficulty": "Professional clinical tasks",
+      "decimals": 1,
+      "successorKey": null,
+      "successorUrl": null,
+      "weight": null,
+      "scoringBasis": null,
+      "scoredCategory": null,
+      "displayableScoreCount": 7,
+      "url": "https://benchlm.ai/benchmarks/healthbenchprofessionalraw",
+      "markdownUrl": "https://benchlm.ai/md/benchmarks/healthbenchprofessionalraw.md"
+    },
+    {
+      "category": "knowledge",
+      "categoryLabel": "Knowledge",
+      "benchmarkKey": "bioMysteryBenchHumanSolvable",
+      "name": "BioMysteryBench (human-solvable)",
+      "fullName": "BioMysteryBench Human Solvable",
+      "description": "Computational biology challenges that independent human experts were able to solve.",
+      "paperUrl": "https://www-cdn.anthropic.com/c5fbac3f0b1280a933ebd26d3cb8bb9f5bdeaf48/Claude%20Opus%205%20System%20Card.pdf",
+      "paperTitle": "Claude Opus 5 System Card",
+      "authors": "Anthropic",
+      "year": "2026",
+      "tasks": "Human-solvable computational biology investigations",
+      "format": "Task score",
+      "difficulty": "Expert computational biology",
+      "decimals": 1,
+      "successorKey": null,
+      "successorUrl": null,
+      "weight": null,
+      "scoringBasis": null,
+      "scoredCategory": null,
+      "displayableScoreCount": 5,
+      "url": "https://benchlm.ai/benchmarks/biomysterybenchhumansolvable",
+      "markdownUrl": "https://benchlm.ai/md/benchmarks/biomysterybenchhumansolvable.md"
+    },
+    {
+      "category": "knowledge",
+      "categoryLabel": "Knowledge",
+      "benchmarkKey": "bioMysteryBenchHumanDifficult",
+      "name": "BioMysteryBench (human-difficult)",
+      "fullName": "BioMysteryBench Human Difficult",
+      "description": "Computational biology challenges with objective answers that remained unsolved by independent human experts.",
+      "paperUrl": "https://www-cdn.anthropic.com/c5fbac3f0b1280a933ebd26d3cb8bb9f5bdeaf48/Claude%20Opus%205%20System%20Card.pdf",
+      "paperTitle": "Claude Opus 5 System Card",
+      "authors": "Anthropic",
+      "year": "2026",
+      "tasks": "Human-difficult computational biology investigations",
+      "format": "Task score",
+      "difficulty": "Frontier computational biology",
+      "decimals": 1,
+      "successorKey": null,
+      "successorUrl": null,
+      "weight": null,
+      "scoringBasis": null,
+      "scoredCategory": null,
+      "displayableScoreCount": 6,
+      "url": "https://benchlm.ai/benchmarks/biomysterybenchhumandifficult",
+      "markdownUrl": "https://benchlm.ai/md/benchmarks/biomysterybenchhumandifficult.md"
+    }
+  ],
+  "sample_note": "Representative selection of five unchanged items; source counts describe the original full export."
+}

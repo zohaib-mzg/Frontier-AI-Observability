@@ -1,0 +1,1454 @@
+{
+  "schemaVersion": "1.0",
+  "name": "BenchLM models",
+  "description": "Stable model metadata, rankings, benchmark scores, and coverage fields for BenchLM model pages.",
+  "canonicalUrl": "https://benchlm.ai/data/models.json",
+  "license": "CC BY-NC 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+  "commercialUse": "Not permitted without a license from BenchLM: https://benchlm.ai/contact",
+  "attribution": "Data from BenchLM.ai",
+  "generatedAt": "2026-10-01T17:31:32.160Z",
+  "sourceLastUpdated": "October 1, 2026",
+  "sourceFiles": [
+    "src/data/benchmarks.json",
+    "src/data/provenance.js",
+    "src/data/modelReleaseMetadata.js"
+  ],
+  "sourceAttributions": {
+    "jevBench14": {
+      "projectName": "JevBench",
+      "authorName": "Florian Standhartinger",
+      "authorUrl": "https://github.com/fstandhartinger",
+      "projectUrl": "https://github.com/fstandhartinger/jevbench",
+      "sourceCommit": "5b405e7e4efff2cfbbb2fe67db9b0cbad0704b8d",
+      "copyright": "Copyright (c) 2026 Florian Standhartinger and contributors",
+      "license": "MIT",
+      "licenseUrl": "https://github.com/fstandhartinger/jevbench/blob/5b405e7e4efff2cfbbb2fe67db9b0cbad0704b8d/LICENSE",
+      "licenseNoticePath": "/licenses/jevbench-mit.txt",
+      "licenseNoticeUrl": "https://benchlm.ai/licenses/jevbench-mit.txt",
+      "licenseText": "MIT License\n\nCopyright (c) 2026 Florian Standhartinger and contributors\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+      "scope": "JevBench source material retains its upstream license. Evaluated model weights, external code, and upstream datasets retain their own licenses."
+    },
+    "jevBench15": {
+      "projectName": "JevBench",
+      "authorName": "Florian Standhartinger",
+      "authorUrl": "https://github.com/fstandhartinger",
+      "projectUrl": "https://github.com/fstandhartinger/jevbench",
+      "sourceCommit": "bb05a335bc809e61b20c0f745d25499a82b326fc",
+      "copyright": "Copyright (c) 2026 Florian Standhartinger and contributors",
+      "license": "MIT",
+      "licenseUrl": "https://github.com/fstandhartinger/jevbench/blob/bb05a335bc809e61b20c0f745d25499a82b326fc/LICENSE",
+      "licenseNoticePath": "/licenses/jevbench-mit.txt",
+      "licenseNoticeUrl": "https://benchlm.ai/licenses/jevbench-mit.txt",
+      "licenseText": "MIT License\n\nCopyright (c) 2026 Florian Standhartinger and contributors\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+      "scope": "The MIT notice applies to JevBench source code and method documentation. Aggregate results come from Benchmark Heaven's public versioned API. Evaluated model weights, external code, upstream datasets, and other third-party data retain their own terms.",
+      "resultsSourceUrl": "https://benchmarkheaven.com/api/jevbench/v1.5.4",
+      "resultsSha256": "0cf210b76bf85084a5f3fb40fb109e9a2c2f93df42ff6628696377666e89db45",
+      "apiDocumentationUrl": "https://github.com/fstandhartinger/model-market-comparison/blob/main/API.md",
+      "termsUrl": "https://benchmarkheaven.com/terms"
+    },
+    "valsAi": {
+      "publisher": "Vals AI",
+      "publisherUrl": "https://www.vals.ai/",
+      "sourceLabel": "Vals AI",
+      "sourceRole": "published-evaluation-results",
+      "scope": "Published leaderboard aggregates and evaluation settings only. Dataset contents are not included.",
+      "datasetContentsIncluded": false,
+      "licenseGrantIncluded": false,
+      "benchmarks": {
+        "emb": {
+          "name": "EMB",
+          "sourceUrl": "https://www.vals.ai/benchmarks/emb",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "cyber": {
+          "name": "CyberBench",
+          "sourceUrl": "https://www.vals.ai/benchmarks/cyber",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsIndex": {
+          "name": "Vals Index",
+          "sourceUrl": "https://www.vals.ai/benchmarks/vals_index",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsRsiIndex": {
+          "name": "Vals RSI Index",
+          "sourceUrl": "https://www.vals.ai/benchmarks/rsi_index",
+          "capturedAt": "2026-10-01T03:28:11.403Z"
+        },
+        "valsWebSearchIndex": {
+          "name": "Web Search Index",
+          "sourceUrl": "https://www.vals.ai/benchmarks/web_search",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsTimeHorizonKsp": {
+          "name": "Time Horizon Index: KSP",
+          "sourceUrl": "https://www.vals.ai/benchmarks/time_horizon_index",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsCuaBench": {
+          "name": "CUA-bench",
+          "sourceUrl": "https://www.vals.ai/benchmarks/cua_bench",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "voiceCodeBench": {
+          "name": "VoiceCodeBench",
+          "sourceUrl": "https://www.vals.ai/benchmarks/voice-code-bench",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsBioMysteryBench": {
+          "name": "BioMysteryBench",
+          "sourceUrl": "https://www.vals.ai/benchmarks/biomysterybench",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "financeAgentV2": {
+          "name": "Finance Agent v2",
+          "sourceUrl": "https://www.vals.ai/benchmarks/fabv2",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsFinanceAgentV1": {
+          "name": "Finance Agent v1.1",
+          "sourceUrl": "https://www.vals.ai/benchmarks/finance_agent",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "vibeCodeBench": {
+          "name": "Vibe Code Bench v1.1",
+          "sourceUrl": "https://www.vals.ai/benchmarks/vibe-code",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "vibeCodeBench1To100": {
+          "name": "Vibe Code Bench 1-100",
+          "sourceUrl": "https://www.vals.ai/benchmarks/vcb-1-100",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsMedScribe": {
+          "name": "MedScribe",
+          "sourceUrl": "https://www.vals.ai/benchmarks/medscribe",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "taxEvalV2": {
+          "name": "TaxEval v2",
+          "sourceUrl": "https://www.vals.ai/benchmarks/tax_eval_v2",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsTaxAgentBench": {
+          "name": "Tax Agent Bench",
+          "sourceUrl": "https://www.vals.ai/benchmarks/tax_agent_bench",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "hlab": {
+          "name": "Harvey's Legal Agent Benchmark",
+          "sourceUrl": "https://www.vals.ai/benchmarks/hlab",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsSweBench": {
+          "name": "Vals SWE-bench mirror",
+          "sourceUrl": "https://www.vals.ai/benchmarks/swebench",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsLiveCodeBench": {
+          "name": "Vals LiveCodeBench mirror",
+          "sourceUrl": "https://www.vals.ai/benchmarks/lcb",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsTerminalBench21": {
+          "name": "Vals Terminal-Bench 2.1 mirror",
+          "sourceUrl": "https://www.vals.ai/benchmarks/terminal-bench-2-1",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsTerminalBench4": {
+          "name": "Vals Terminal-Bench 4.0 mirror",
+          "sourceUrl": "https://www.vals.ai/benchmarks/terminal-bench-4",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsTerminalBenchScience": {
+          "name": "Vals Terminal-Bench Science mirror",
+          "sourceUrl": "https://www.vals.ai/benchmarks/terminal-bench-science",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsGpqaDiamond": {
+          "name": "Vals GPQA Diamond mirror",
+          "sourceUrl": "https://www.vals.ai/benchmarks/gpqa",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsCorpFinV2": {
+          "name": "CorpFin v2",
+          "sourceUrl": "https://www.vals.ai/benchmarks/corp_fin_v2",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsMultimodalIndex": {
+          "name": "Vals Multimodal Index",
+          "sourceUrl": "https://www.vals.ai/benchmarks/vals_multimodal_index",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "codeMigration": {
+          "name": "Code Migration",
+          "sourceUrl": "https://www.vals.ai/benchmarks/code-migration",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsReverseEngBench": {
+          "name": "SRE Bench",
+          "sourceUrl": "https://www.vals.ai/benchmarks/srebench",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "legalResearchBench": {
+          "name": "Legal Research Bench",
+          "sourceUrl": "https://www.vals.ai/benchmarks/legal_research",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsLegalBench": {
+          "name": "LegalBench",
+          "sourceUrl": "https://www.vals.ai/benchmarks/legal_bench",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsCaseLawV2": {
+          "name": "CaseLaw v2",
+          "sourceUrl": "https://www.vals.ai/benchmarks/case_law_v2",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsMortgageTax": {
+          "name": "MortgageTax",
+          "sourceUrl": "https://www.vals.ai/benchmarks/mortgage_tax",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsMedCode": {
+          "name": "MedCode",
+          "sourceUrl": "https://www.vals.ai/benchmarks/medcode",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsMedQa": {
+          "name": "MedQA",
+          "sourceUrl": "https://www.vals.ai/benchmarks/medqa",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsProofBench": {
+          "name": "ProofBench",
+          "sourceUrl": "https://www.vals.ai/benchmarks/proof_bench",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "mysteryMechanism": {
+          "name": "MysteryMechanism",
+          "sourceUrl": "https://www.vals.ai/benchmarks/mysterymechanism",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsAime": {
+          "name": "AIME",
+          "sourceUrl": "https://www.vals.ai/benchmarks/aime",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsMath500": {
+          "name": "MATH 500",
+          "sourceUrl": "https://www.vals.ai/benchmarks/math500",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsMgsm": {
+          "name": "MGSM",
+          "sourceUrl": "https://www.vals.ai/benchmarks/mgsm",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsMmluPro": {
+          "name": "Vals MMLU-Pro mirror",
+          "sourceUrl": "https://www.vals.ai/benchmarks/mmlu_pro",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsMmmu": {
+          "name": "MMMU",
+          "sourceUrl": "https://www.vals.ai/benchmarks/mmmu",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "sage": {
+          "name": "SAGE",
+          "sourceUrl": "https://www.vals.ai/benchmarks/sage",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsIoi": {
+          "name": "IOI",
+          "sourceUrl": "https://www.vals.ai/benchmarks/ioi",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsIoiV1": {
+          "name": "IOI v1 (archived)",
+          "sourceUrl": "https://www.vals.ai/benchmarks/ioi-v1",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsProgramBench": {
+          "name": "Vals ProgramBench mirror",
+          "sourceUrl": "https://www.vals.ai/benchmarks/programbench",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "skillsBench": {
+          "name": "SkillsBench",
+          "sourceUrl": "https://www.vals.ai/benchmarks/skillsbench",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsTerminalBench2": {
+          "name": "Vals Terminal-Bench 2.0 mirror",
+          "sourceUrl": "https://www.vals.ai/benchmarks/terminal-bench-2",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "valsTerminalBench1": {
+          "name": "Vals Terminal-Bench 1.0 mirror",
+          "sourceUrl": "https://www.vals.ai/benchmarks/terminal-bench",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "pokerAgent": {
+          "name": "Agent Poker Bench",
+          "sourceUrl": "https://www.vals.ai/benchmarks/poker_agent",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "publicBenefitsBench": {
+          "name": "Public Benefits Bench v1.1",
+          "sourceUrl": "https://www.vals.ai/benchmarks/snap",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        },
+        "publicBenefitsBenchV1": {
+          "name": "Public Benefits Bench v1",
+          "sourceUrl": "https://www.vals.ai/benchmarks/public-benefits-bench-v1",
+          "capturedAt": "2026-09-30T20:37:58.540Z"
+        }
+      }
+    }
+  },
+  "counts": {
+    "totalModels": 638,
+    "canonicalModels": 508,
+    "rankingEligibleModels": 207
+  },
+  "items": [
+    {
+      "slug": "claude-opus-5",
+      "canonicalModelKey": "claude-opus-5",
+      "model": "Claude Opus 5",
+      "creator": "Anthropic",
+      "sourceType": "Proprietary",
+      "reasoningType": "Reasoning",
+      "contextWindow": null,
+      "contextWindowTokens": 0,
+      "displayScore": 79.89,
+      "provisionalDisplayScore": 86,
+      "publicRankingMode": "bench-align-v5",
+      "evidenceStatus": "supported",
+      "scoreInterval90": {
+        "lower": 76.81,
+        "upper": 82.98
+      },
+      "orderingMeaning": "Point-estimate order; conditional ranges do not establish rank confidence.",
+      "rankingEligible": true,
+      "overallRank": 5,
+      "url": "https://benchlm.ai/models/claude-opus-5",
+      "markdownUrl": "https://benchlm.ai/md/models/claude-opus-5.md",
+      "id": 295,
+      "releaseDate": "2026-07-24",
+      "market": null,
+      "isRegional": false,
+      "family": {
+        "familyKey": "claude-opus-5",
+        "familyName": "Claude Opus 5",
+        "variantType": "base",
+        "snapshotLabel": null,
+        "baseFamilyModelKey": "claude-opus-5",
+        "relatedModelKeys": [
+          "claude-opus-5-5",
+          "claude-opus-4-8",
+          "claude-fable-5",
+          "claude-sonnet-5"
+        ],
+        "isCanonicalFamilyEntry": true,
+        "supersedesModelKey": "claude-opus-4-8"
+      },
+      "scores": {
+        "displayScore": 86,
+        "overallScore": 86,
+        "rawOverallScore": 86,
+        "verifiedDisplayScore": 82,
+        "displayCategoryScores": {
+          "agentic": 85.4,
+          "coding": 89.5,
+          "reasoning": 77.3,
+          "multimodalGrounded": 88.8,
+          "knowledge": 97.3,
+          "multilingual": null,
+          "instructionFollowing": null,
+          "math": null
+        },
+        "verifiedDisplayCategoryScores": {
+          "agentic": 70.8,
+          "coding": 89.5,
+          "reasoning": 77.3,
+          "multimodalGrounded": 88.8,
+          "knowledge": 97.3,
+          "multilingual": null,
+          "instructionFollowing": null,
+          "math": null
+        }
+      },
+      "ranking": {
+        "rankingEligible": true,
+        "verifiedRankingEligible": true,
+        "overallRank": 5,
+        "categoryRanks": {
+          "agentic": 3,
+          "coding": 7,
+          "reasoning": 10,
+          "multimodalGrounded": 2,
+          "knowledge": 7
+        },
+        "categoryRankingEligible": {
+          "agentic": true,
+          "coding": true,
+          "reasoning": true,
+          "multimodalGrounded": true,
+          "knowledge": true,
+          "multilingual": false,
+          "instructionFollowing": false,
+          "math": false
+        }
+      },
+      "coverage": {
+        "trustedBenchmarkCount": 80,
+        "verifiedBenchmarkCount": 80,
+        "rankableBenchmarkCount": 80,
+        "generatedBenchmarkCount": 0,
+        "scoreConfidence": 3
+      },
+      "benchmarks": {
+        "agentic": {
+          "frontierBench": 42.7,
+          "browseComp": 90.8,
+          "hleWithTools": 64.7,
+          "deepSearchQa": 95,
+          "draco": 88.6,
+          "multiAgentBrowseCompPrerelease": 93.6,
+          "osWorld2": 70.6,
+          "mcpAtlas": 85.8,
+          "mcpAtlasClaimCoverage": 89.1,
+          "legalAgentBenchAllPass": 23.58,
+          "legalAgentBenchCriterionPass": 93.74,
+          "legalAgentBenchHeldoutAllPass": 11.7,
+          "legalAgentBenchHeldoutCriterionPass": 94.1,
+          "gdpvalAa": 1862,
+          "toolathlonVerified": 80.6,
+          "toolathlonVerifiedPass3": 87,
+          "toolathlonVerifiedPass3All": 73.1,
+          "toolathlonVerifiedAvgTurns": 23.5,
+          "automationBench": 26,
+          "gdpvalAaNormalized": 60.4,
+          "aaBriefcaseElo": 1720,
+          "aaHarveyLab": 93.5,
+          "valsTerminalBench21": 84.6,
+          "aaAgenticIndex": 56.22,
+          "aaAnalystAgent": 53.8,
+          "apprenticeBench": 36
+        },
+        "coding": {
+          "bug-hunt-bench": 27,
+          "sweVerified": 96,
+          "swePro": 79.2,
+          "sweMultilingual": 89.5,
+          "sweMultimodal": 59.4,
+          "deepSwe": 68.8,
+          "frontierCode": 53.4,
+          "frontierCode11Extended": 63.6,
+          "frontierSweV2": 52,
+          "programBenchEpisode1": 83,
+          "programBench": 93,
+          "cursorBench32": 70,
+          "vulcanBench": 87,
+          "aaCodingIndex": 77.98,
+          "aaSciCode": 56.4,
+          "vulcanCiiV1": 96.4,
+          "valsLiveCodeBench": 89,
+          "valsSweBench": 97,
+          "cursorBench40": 46.6,
+          "postTrainBench11": 35.04
+        },
+        "reasoning": {
+          "arcAgi1": 97.5,
+          "arcAgi2": 90.4,
+          "arcAgi3": 30.16,
+          "lcr": 79.3,
+          "critpt": 29.1,
+          "aaMlcr": 55.6
+        },
+        "multimodalGrounded": {
+          "chartography": 29.6,
+          "chartographyWithTools": 83,
+          "benchCadVision2Code": 0.366,
+          "benchCadVision2CodeWithTools": 0.821,
+          "gdpPdf": 83.4,
+          "gdpPdfWithTools": 85.5,
+          "officeQa": 78.1,
+          "officeQaPro": 66.9,
+          "aaMmmuPro": 84.7,
+          "designArenaWebsite": 1318
+        },
+        "knowledge": {
+          "hle": 64.7,
+          "hleNoTools": 56.3,
+          "hleVerified": 54.4,
+          "labBench2": 84.2,
+          "healthBench": 67.1,
+          "healthBenchLengthAdjusted": 57.8,
+          "healthBenchProfessional": 59.8,
+          "healthBenchProfessionalRaw": 73.4,
+          "bioMysteryBenchHumanSolvable": 90.1,
+          "bioMysteryBenchHumanDifficult": 49.4,
+          "spatialBenchVerified": 72.5,
+          "singleCellBench": 60.6,
+          "proteinGymHard": 47.7,
+          "proteinDesign": 42.5,
+          "organicChemistryV2": 61.6,
+          "protocolsTroubleshooting": 61.1,
+          "protocolsUnderstanding": 78.4,
+          "artificialAnalysis": 50.78,
+          "aaGpqaDiamond": 93.2,
+          "aaHle": 54.9,
+          "aaOmniscienceIndex": 37.1,
+          "omniscienceAccuracy": 60.9,
+          "omniscienceHallucinationRate": 60.8,
+          "valsGpqaDiamond": 93.4,
+          "valsMmluPro": 91.6
+        },
+        "multilingual": {
+          "gmmlu": 92.5,
+          "milu": 92.1,
+          "include": 89.8
+        },
+        "instructionFollowing": {
+          "graySwanIpi15": 4.6
+        },
+        "math": {
+          "imo2026": 42,
+          "riemannBench": 60,
+          "riemannBenchWithTools": 79,
+          "arxivMathJune2026": 90.8,
+          "arxivMathJune2026WithTools": 91.3
+        }
+      },
+      "benchmarkSources": {
+        "agentic": {
+          "valsTerminalBench21": {
+            "publisher": "Vals AI",
+            "publisherUrl": "https://www.vals.ai/",
+            "sourceLabel": "Vals AI",
+            "sourceRole": "published-evaluation-results",
+            "scope": "Published leaderboard aggregates and evaluation settings only. Dataset contents are not included.",
+            "datasetContentsIncluded": false,
+            "licenseGrantIncluded": false,
+            "label": "Vals AI: Terminal-Bench 2.1 leaderboard",
+            "url": "https://www.vals.ai/models/anthropic_claude-opus-5",
+            "benchmarkUrl": "https://www.vals.ai/benchmarks/terminal-bench-2-1",
+            "retrievedAt": null
+          }
+        },
+        "coding": {
+          "valsLiveCodeBench": {
+            "publisher": "Vals AI",
+            "publisherUrl": "https://www.vals.ai/",
+            "sourceLabel": "Vals AI",
+            "sourceRole": "published-evaluation-results",
+            "scope": "Published leaderboard aggregates and evaluation settings only. Dataset contents are not included.",
+            "datasetContentsIncluded": false,
+            "licenseGrantIncluded": false,
+            "label": "Vals AI: LiveCodeBench leaderboard",
+            "url": "https://www.vals.ai/models/anthropic_claude-opus-5",
+            "benchmarkUrl": "https://www.vals.ai/benchmarks/lcb",
+            "retrievedAt": null
+          },
+          "valsSweBench": {
+            "publisher": "Vals AI",
+            "publisherUrl": "https://www.vals.ai/",
+            "sourceLabel": "Vals AI",
+            "sourceRole": "published-evaluation-results",
+            "scope": "Published leaderboard aggregates and evaluation settings only. Dataset contents are not included.",
+            "datasetContentsIncluded": false,
+            "licenseGrantIncluded": false,
+            "label": "Vals AI: SWE-bench leaderboard",
+            "url": "https://www.vals.ai/models/anthropic_claude-opus-5",
+            "benchmarkUrl": "https://www.vals.ai/benchmarks/swebench",
+            "retrievedAt": null
+          }
+        },
+        "knowledge": {
+          "valsGpqaDiamond": {
+            "publisher": "Vals AI",
+            "publisherUrl": "https://www.vals.ai/",
+            "sourceLabel": "Vals AI",
+            "sourceRole": "published-evaluation-results",
+            "scope": "Published leaderboard aggregates and evaluation settings only. Dataset contents are not included.",
+            "datasetContentsIncluded": false,
+            "licenseGrantIncluded": false,
+            "label": "Vals AI: GPQA Diamond leaderboard",
+            "url": "https://www.vals.ai/models/anthropic_claude-opus-5",
+            "benchmarkUrl": "https://www.vals.ai/benchmarks/gpqa",
+            "retrievedAt": null
+          },
+          "valsMmluPro": {
+            "publisher": "Vals AI",
+            "publisherUrl": "https://www.vals.ai/",
+            "sourceLabel": "Vals AI",
+            "sourceRole": "published-evaluation-results",
+            "scope": "Published leaderboard aggregates and evaluation settings only. Dataset contents are not included.",
+            "datasetContentsIncluded": false,
+            "licenseGrantIncluded": false,
+            "label": "Vals AI: MMLU Pro leaderboard",
+            "url": "https://www.vals.ai/models/anthropic_claude-opus-5",
+            "benchmarkUrl": "https://www.vals.ai/benchmarks/mmlu_pro",
+            "retrievedAt": null
+          }
+        }
+      }
+    },
+    {
+      "slug": "gpt-6-astra",
+      "canonicalModelKey": "gpt-6-astra",
+      "model": "GPT-6 Astra",
+      "creator": "OpenAI",
+      "sourceType": "Proprietary",
+      "reasoningType": "Reasoning",
+      "contextWindow": "1.05M",
+      "contextWindowTokens": 1050000,
+      "displayScore": 88.69,
+      "provisionalDisplayScore": 83,
+      "publicRankingMode": "bench-align-v5",
+      "evidenceStatus": "supported",
+      "scoreInterval90": {
+        "lower": 84.1,
+        "upper": 93.29
+      },
+      "orderingMeaning": "Point-estimate order; conditional ranges do not establish rank confidence.",
+      "rankingEligible": true,
+      "overallRank": 1,
+      "url": "https://benchlm.ai/models/gpt-6-astra",
+      "markdownUrl": "https://benchlm.ai/md/models/gpt-6-astra.md",
+      "id": 423,
+      "releaseDate": "2026-09-03",
+      "market": null,
+      "isRegional": false,
+      "family": {
+        "familyKey": "gpt-6",
+        "familyName": "GPT-6",
+        "variantType": "astra",
+        "snapshotLabel": "astra",
+        "baseFamilyModelKey": "gpt-6-astra",
+        "relatedModelKeys": [
+          "gpt-6-sol",
+          "gpt-6-luna"
+        ],
+        "isCanonicalFamilyEntry": true,
+        "supersedesModelKey": "gpt-5-6-sol"
+      },
+      "scores": {
+        "displayScore": 83,
+        "overallScore": 83,
+        "rawOverallScore": 83,
+        "verifiedDisplayScore": 83,
+        "displayCategoryScores": {
+          "agentic": 86.8,
+          "coding": 73.5,
+          "reasoning": 89.6,
+          "multimodalGrounded": 83.9,
+          "knowledge": 86.4,
+          "multilingual": null,
+          "instructionFollowing": null,
+          "math": 85
+        },
+        "verifiedDisplayCategoryScores": {
+          "agentic": 88.1,
+          "coding": null,
+          "reasoning": 89.6,
+          "multimodalGrounded": 83.9,
+          "knowledge": 86.5,
+          "multilingual": null,
+          "instructionFollowing": null,
+          "math": 85
+        }
+      },
+      "ranking": {
+        "rankingEligible": true,
+        "verifiedRankingEligible": true,
+        "overallRank": 1,
+        "categoryRanks": {
+          "agentic": 6,
+          "coding": 4,
+          "reasoning": 1,
+          "knowledge": 2
+        },
+        "categoryRankingEligible": {
+          "agentic": true,
+          "coding": true,
+          "reasoning": true,
+          "multimodalGrounded": false,
+          "knowledge": true,
+          "multilingual": false,
+          "instructionFollowing": false,
+          "math": false
+        }
+      },
+      "coverage": {
+        "trustedBenchmarkCount": 38,
+        "verifiedBenchmarkCount": 38,
+        "rankableBenchmarkCount": 38,
+        "generatedBenchmarkCount": 0,
+        "scoreConfidence": 3
+      },
+      "benchmarks": {
+        "agentic": {
+          "browseComp": 91.5,
+          "osWorld2": 72.6,
+          "terminalBench4": 57.9,
+          "terminalBenchScience": 64.6,
+          "exploitGym": 42.4,
+          "agentsLastExam": 59.3,
+          "automationBench": 41.4,
+          "hleWithTools": 57.2,
+          "gdpvalAaNormalized": 52.1,
+          "aaBriefcaseElo": 1569,
+          "aaTau3Banking": 41.4,
+          "valsTerminalBench21": 87.3,
+          "aaAutomationBench": 68.5,
+          "gdpvalAa": 1542,
+          "aaAgenticIndex": 51.46,
+          "aaGdpPdf": 31,
+          "aaAnalystAgent": 51.2,
+          "apprenticeBench": 68,
+          "aaItbench": 48.6,
+          "aaTerminalBench21": 88.4,
+          "aaTerminalBench4": 59.1,
+          "cweBenchV1": 68
+        },
+        "coding": {
+          "deepSwe": 74.1,
+          "frontierCode": 53.3,
+          "frontierCode11Extended": 64.5,
+          "aaSciCode": 56.5,
+          "aaCodingIndex": 76.94,
+          "frontierSweV2": 65.5,
+          "postTrainBench11": 44.3
+        },
+        "reasoning": {
+          "arcAgi1": 98.5,
+          "arcAgi2": 95,
+          "arcAgi3": 62.71,
+          "geneBenchPro": 37.8,
+          "mrcrv2_256_512": 100,
+          "mrcrv2_512_1m": 96.3,
+          "lcr": 80.7,
+          "critpt": 31.7,
+          "aaMlcr": 35,
+          "graphwalksBfs256k1m": 71.8
+        },
+        "multimodalGrounded": {
+          "screenSpotPro": 92.7,
+          "benchCadVision2CodeWithTools": 0.959,
+          "aaMmmuPro": 86.9
+        },
+        "knowledge": {
+          "gpqa": 96,
+          "gpqaDiamond": 96,
+          "healthBench": 56.9,
+          "healthBenchLengthAdjusted": 58.3,
+          "healthBenchProfessional": 64.7,
+          "healthBenchProfessionalRaw": 68.2,
+          "healthBenchHard": 36.6,
+          "artificialAnalysis": 52.67,
+          "aaGpqaDiamond": 96.1,
+          "aaHle": 54.7,
+          "aaOmniscienceIndex": 43.4,
+          "omniscienceAccuracy": 62.6,
+          "omniscienceHallucinationRate": 51.3
+        },
+        "multilingual": {},
+        "instructionFollowing": {
+          "graySwanIpi15": 8.5
+        },
+        "math": {
+          "frontierMathV2Tier4": 97.6
+        },
+        "external": {
+          "exploitBench": 100,
+          "sreBench": 88,
+          "secBenchPro": 85.4,
+          "frontierCyber": 38.1,
+          "cyScenarioBenchAverageSuccess": 59,
+          "cyScenarioBenchScenariosSolved": 9,
+          "atomicNetworkAttackSimulation": 100,
+          "atomicVulnerabilityResearch": 100,
+          "atomicEvasion": 52,
+          "advancedCyberCompletionRateStandard": 3.5,
+          "advancedCyberCompletionRateBlue": 3.5
+        }
+      },
+      "benchmarkSources": {
+        "agentic": {
+          "valsTerminalBench21": {
+            "publisher": "Vals AI",
+            "publisherUrl": "https://www.vals.ai/",
+            "sourceLabel": "Vals AI",
+            "sourceRole": "published-evaluation-results",
+            "scope": "Published leaderboard aggregates and evaluation settings only. Dataset contents are not included.",
+            "datasetContentsIncluded": false,
+            "licenseGrantIncluded": false,
+            "label": "Vals AI: Terminal-Bench 2.1 leaderboard",
+            "url": "https://www.vals.ai/models/openai_gpt-6-astra",
+            "benchmarkUrl": "https://www.vals.ai/benchmarks/terminal-bench-2-1",
+            "retrievedAt": null
+          }
+        }
+      }
+    },
+    {
+      "slug": "claude-fable",
+      "canonicalModelKey": "claude-fable-5",
+      "model": "Claude Fable 5",
+      "creator": "Anthropic",
+      "sourceType": "Proprietary",
+      "reasoningType": "Reasoning",
+      "contextWindow": "1M+",
+      "contextWindowTokens": 1000000,
+      "displayScore": 79.41,
+      "provisionalDisplayScore": 81,
+      "publicRankingMode": "bench-align-v5",
+      "evidenceStatus": "supported",
+      "scoreInterval90": {
+        "lower": 76.4,
+        "upper": 82.42
+      },
+      "orderingMeaning": "Point-estimate order; conditional ranges do not establish rank confidence.",
+      "rankingEligible": true,
+      "overallRank": 6,
+      "url": "https://benchlm.ai/models/claude-fable",
+      "markdownUrl": "https://benchlm.ai/md/models/claude-fable.md",
+      "id": 257,
+      "releaseDate": "2026-06-09",
+      "market": null,
+      "isRegional": false,
+      "family": {
+        "familyKey": "claude-fable",
+        "familyName": "Claude Fable",
+        "variantType": "base",
+        "snapshotLabel": null,
+        "baseFamilyModelKey": "claude-fable-5",
+        "relatedModelKeys": [
+          "claude-mythos-5",
+          "claude-fable-5-1"
+        ],
+        "isCanonicalFamilyEntry": true,
+        "supersedesModelKey": null
+      },
+      "scores": {
+        "displayScore": 81,
+        "overallScore": 81,
+        "rawOverallScore": 81,
+        "verifiedDisplayScore": 81,
+        "displayCategoryScores": {
+          "agentic": 83.3,
+          "coding": 89.5,
+          "reasoning": 80.7,
+          "multimodalGrounded": 62.6,
+          "knowledge": 87.2,
+          "multilingual": null,
+          "instructionFollowing": 75.7,
+          "math": null
+        },
+        "verifiedDisplayCategoryScores": {
+          "agentic": 81.7,
+          "coding": 89.5,
+          "reasoning": 80.7,
+          "multimodalGrounded": 62.6,
+          "knowledge": 87.3,
+          "multilingual": null,
+          "instructionFollowing": 75.7,
+          "math": null
+        }
+      },
+      "ranking": {
+        "rankingEligible": true,
+        "verifiedRankingEligible": true,
+        "overallRank": 6,
+        "categoryRanks": {
+          "agentic": 5,
+          "coding": 6,
+          "knowledge": 6,
+          "instructionFollowing": 58
+        },
+        "categoryRankingEligible": {
+          "agentic": true,
+          "coding": true,
+          "reasoning": false,
+          "multimodalGrounded": false,
+          "knowledge": true,
+          "multilingual": false,
+          "instructionFollowing": true,
+          "math": false
+        }
+      },
+      "coverage": {
+        "trustedBenchmarkCount": 30,
+        "verifiedBenchmarkCount": 30,
+        "rankableBenchmarkCount": 30,
+        "generatedBenchmarkCount": 0,
+        "scoreConfidence": 3
+      },
+      "benchmarks": {
+        "agentic": {
+          "frontierBench": 34.05,
+          "terminalBench21": 84.3,
+          "osWorldVerified": 85,
+          "gdpvalAa": 1747,
+          "tau2Bench": 98.5,
+          "gdpvalAaNormalized": 54.8,
+          "aaEnterpriseOpsGym": 51.1,
+          "aaHarveyLab": 93.6,
+          "terminalBenchHard": 62.9,
+          "valsTerminalBench21": 80.5,
+          "aaAgenticIndex": 50.96,
+          "aaAnalystAgent": 48.8,
+          "apprenticeBench": 34
+        },
+        "coding": {
+          "sweVerified": 95,
+          "swePro": 80,
+          "frontierSweV2": 47,
+          "frontierCode": 53.5,
+          "terminalBench21": 84.3,
+          "cursorBench31": 70.6,
+          "cursorBench32": 70.5,
+          "vulcanBench": 89.5,
+          "aaSciCode": 61,
+          "valsLiveCodeBench": 89.8,
+          "valsSweBench": 95,
+          "aaCodingIndex": 76.49
+        },
+        "reasoning": {
+          "lcr": 82.3,
+          "critpt": 28.6,
+          "aaMlcr": 64.4,
+          "arcAgi1": 98.5,
+          "arcAgi2": 89.2
+        },
+        "multimodalGrounded": {
+          "blueprintBench2": 38.6,
+          "officeQaPro": 57.9,
+          "designArenaWebsite": 1303
+        },
+        "knowledge": {
+          "artificialAnalysis": 49.63,
+          "aaGpqaDiamond": 92.6,
+          "aaHle": 55.5,
+          "aaOmniscienceIndex": 43.3,
+          "omniscienceAccuracy": 65.4,
+          "omniscienceHallucinationRate": 63.6,
+          "valsGpqaDiamond": 93.2,
+          "valsMmluPro": 91.5
+        },
+        "multilingual": {},
+        "instructionFollowing": {
+          "aaIfBench": 63.5
+        },
+        "math": {}
+      },
+      "benchmarkSources": {
+        "agentic": {
+          "valsTerminalBench21": {
+            "publisher": "Vals AI",
+            "publisherUrl": "https://www.vals.ai/",
+            "sourceLabel": "Vals AI",
+            "sourceRole": "published-evaluation-results",
+            "scope": "Published leaderboard aggregates and evaluation settings only. Dataset contents are not included.",
+            "datasetContentsIncluded": false,
+            "licenseGrantIncluded": false,
+            "label": "Vals AI: Terminal-Bench 2.1 leaderboard",
+            "url": "https://www.vals.ai/models/anthropic_claude-fable-5",
+            "benchmarkUrl": "https://www.vals.ai/benchmarks/terminal-bench-2-1",
+            "retrievedAt": null
+          }
+        },
+        "coding": {
+          "valsLiveCodeBench": {
+            "publisher": "Vals AI",
+            "publisherUrl": "https://www.vals.ai/",
+            "sourceLabel": "Vals AI",
+            "sourceRole": "published-evaluation-results",
+            "scope": "Published leaderboard aggregates and evaluation settings only. Dataset contents are not included.",
+            "datasetContentsIncluded": false,
+            "licenseGrantIncluded": false,
+            "label": "Vals AI: LiveCodeBench leaderboard",
+            "url": "https://www.vals.ai/models/anthropic_claude-fable-5",
+            "benchmarkUrl": "https://www.vals.ai/benchmarks/lcb",
+            "retrievedAt": null
+          },
+          "valsSweBench": {
+            "publisher": "Vals AI",
+            "publisherUrl": "https://www.vals.ai/",
+            "sourceLabel": "Vals AI",
+            "sourceRole": "published-evaluation-results",
+            "scope": "Published leaderboard aggregates and evaluation settings only. Dataset contents are not included.",
+            "datasetContentsIncluded": false,
+            "licenseGrantIncluded": false,
+            "label": "Vals AI: SWE-bench leaderboard",
+            "url": "https://www.vals.ai/models/anthropic_claude-fable-5",
+            "benchmarkUrl": "https://www.vals.ai/benchmarks/swebench",
+            "retrievedAt": null
+          }
+        },
+        "knowledge": {
+          "valsGpqaDiamond": {
+            "publisher": "Vals AI",
+            "publisherUrl": "https://www.vals.ai/",
+            "sourceLabel": "Vals AI",
+            "sourceRole": "published-evaluation-results",
+            "scope": "Published leaderboard aggregates and evaluation settings only. Dataset contents are not included.",
+            "datasetContentsIncluded": false,
+            "licenseGrantIncluded": false,
+            "label": "Vals AI: GPQA Diamond leaderboard",
+            "url": "https://www.vals.ai/models/anthropic_claude-fable-5",
+            "benchmarkUrl": "https://www.vals.ai/benchmarks/gpqa",
+            "retrievedAt": null
+          },
+          "valsMmluPro": {
+            "publisher": "Vals AI",
+            "publisherUrl": "https://www.vals.ai/",
+            "sourceLabel": "Vals AI",
+            "sourceRole": "published-evaluation-results",
+            "scope": "Published leaderboard aggregates and evaluation settings only. Dataset contents are not included.",
+            "datasetContentsIncluded": false,
+            "licenseGrantIncluded": false,
+            "label": "Vals AI: MMLU Pro leaderboard",
+            "url": "https://www.vals.ai/models/anthropic_claude-fable-5",
+            "benchmarkUrl": "https://www.vals.ai/benchmarks/mmlu_pro",
+            "retrievedAt": null
+          }
+        }
+      }
+    },
+    {
+      "slug": "claude-sonnet-5-5",
+      "canonicalModelKey": "claude-sonnet-5-5",
+      "model": "Claude Sonnet 5.5",
+      "creator": "Anthropic",
+      "sourceType": "Proprietary",
+      "reasoningType": "Reasoning",
+      "contextWindow": "1M",
+      "contextWindowTokens": 1000000,
+      "displayScore": 83.28,
+      "provisionalDisplayScore": 80,
+      "publicRankingMode": "bench-align-v5",
+      "evidenceStatus": "estimated",
+      "scoreInterval90": {
+        "lower": 68.93,
+        "upper": 97.63,
+        "scope": "source-pattern",
+        "sourcePattern": "objective-only",
+        "patternCalibrationFamilies": 12,
+        "patternIntervalAvailable": true,
+        "validatedFutureTruth": false,
+        "coverageValidated": false,
+        "simultaneousRosterCoverageValidated": false
+      },
+      "orderingMeaning": "Point-estimate order; conditional ranges do not establish rank confidence.",
+      "rankingEligible": true,
+      "overallRank": 3,
+      "url": "https://benchlm.ai/models/claude-sonnet-5-5",
+      "markdownUrl": "https://benchlm.ai/md/models/claude-sonnet-5-5.md",
+      "id": 524,
+      "releaseDate": "2026-09-28",
+      "market": null,
+      "isRegional": false,
+      "family": {
+        "familyKey": "claude-sonnet-5-5",
+        "familyName": "Claude Sonnet 5.5",
+        "variantType": "base",
+        "snapshotLabel": null,
+        "baseFamilyModelKey": "claude-sonnet-5-5",
+        "relatedModelKeys": [
+          "claude-sonnet-5",
+          "claude-opus-5-5"
+        ],
+        "isCanonicalFamilyEntry": true,
+        "supersedesModelKey": "claude-sonnet-5"
+      },
+      "scores": {
+        "displayScore": 80,
+        "overallScore": 80,
+        "rawOverallScore": 80,
+        "verifiedDisplayScore": 80,
+        "displayCategoryScores": {
+          "agentic": 79.2,
+          "coding": 86.6,
+          "reasoning": 79.2,
+          "multimodalGrounded": 83.3,
+          "knowledge": 85.2,
+          "multilingual": null,
+          "instructionFollowing": null,
+          "math": null
+        },
+        "verifiedDisplayCategoryScores": {
+          "agentic": null,
+          "coding": 86.5,
+          "reasoning": 79.2,
+          "multimodalGrounded": 83.3,
+          "knowledge": 85.7,
+          "multilingual": null,
+          "instructionFollowing": null,
+          "math": null
+        }
+      },
+      "ranking": {
+        "rankingEligible": true,
+        "verifiedRankingEligible": false,
+        "overallRank": 3,
+        "categoryRanks": {
+          "agentic": 8,
+          "coding": 1,
+          "reasoning": 8,
+          "knowledge": 4
+        },
+        "categoryRankingEligible": {
+          "agentic": true,
+          "coding": true,
+          "reasoning": true,
+          "multimodalGrounded": false,
+          "knowledge": true,
+          "multilingual": false,
+          "instructionFollowing": false,
+          "math": false
+        }
+      },
+      "coverage": {
+        "trustedBenchmarkCount": 53,
+        "verifiedBenchmarkCount": 53,
+        "rankableBenchmarkCount": 53,
+        "generatedBenchmarkCount": 0,
+        "scoreConfidence": 3
+      },
+      "benchmarks": {
+        "agentic": {
+          "terminalBench4": 70.6,
+          "gdpvalAa": 1844,
+          "hleWithTools": 64.5,
+          "draco": 87,
+          "terminalBenchScience": 59.9,
+          "legalAgentBenchHeldoutAllPass": 10,
+          "legalAgentBenchHeldoutCriterionPass": 93.1,
+          "toolathlonVerifiedPass3": 85.2,
+          "toolathlonVerifiedPass3All": 68.5,
+          "toolathlonVerifiedAvgTurns": 31.6,
+          "gdpvalAaNormalized": 67.2,
+          "aaBriefcaseElo": 1811,
+          "aaHarveyLab": 93.1,
+          "aaTerminalBench4": 63.6,
+          "aaGdpPdf": 25.8,
+          "automationBenchZapier106": 44.7,
+          "toolathlonVerified": 77.8,
+          "aaAutomationBench": 71.3
+        },
+        "coding": {
+          "frontierCode": 46.2,
+          "cursorBench40": 55.5,
+          "swePro": 81.3,
+          "sweMultilingual": 90.3,
+          "sweMultimodal": 54.3,
+          "deepSwe": 71,
+          "frontierCode11Extended": 59.1,
+          "programBench": 79.7,
+          "frontierSweV2": 61.9,
+          "aaSciCode": 61
+        },
+        "reasoning": {
+          "lcr": 82.7,
+          "critpt": 31.4,
+          "aaMlcr": 75
+        },
+        "multimodalGrounded": {
+          "chartography": 61.6,
+          "chartographyWithTools": 90.2,
+          "benchCadVision2Code": 0.747,
+          "benchCadVision2CodeWithTools": 0.963,
+          "biomedicalImageAnalysis": 72.2,
+          "officeQa": 76.9,
+          "officeQaPro": 65.6
+        },
+        "knowledge": {
+          "healthBench": 69.4,
+          "healthBenchLengthAdjusted": 65.4,
+          "healthBenchProfessionalRaw": 77.1,
+          "healthBenchProfessional": 69.2,
+          "bioMysteryBenchHumanSolvable": 89.2,
+          "bioMysteryBenchHumanDifficult": 44.7,
+          "spatialBenchVerified": 72.5,
+          "singleCellBench": 59.1,
+          "proteinDesign": 51,
+          "morphologyToMolecule": 25,
+          "medicinalChemistry": 65.3,
+          "proteinDesignLibraryRanking": 54.8,
+          "proteinBinderDesign": 82.3,
+          "protocolsTroubleshooting": 67.3,
+          "protocolsUnderstanding": 66.6,
+          "hleNoTools": 56.9,
+          "artificialAnalysis": 55.98,
+          "aaHle": 55,
+          "aaOmniscienceIndex": 32.3,
+          "omniscienceAccuracy": 54,
+          "omniscienceHallucinationRate": 47
+        },
+        "multilingual": {
+          "gmmlu": 92.1,
+          "milu": 91.6
+        },
+        "instructionFollowing": {},
+        "math": {
+          "arxivMathAugust2026": 86.8,
+          "arxivMathAugust2026WithTools": 95.2
+        }
+      }
+    },
+    {
+      "slug": "qwen3-8-max",
+      "canonicalModelKey": "qwen3-8-max",
+      "model": "Qwen3.8 Max",
+      "creator": "Alibaba",
+      "sourceType": "Open Weight",
+      "reasoningType": "Reasoning",
+      "contextWindow": "1M",
+      "contextWindowTokens": 1000000,
+      "displayScore": 72.1,
+      "provisionalDisplayScore": 79,
+      "publicRankingMode": "bench-align-v5",
+      "evidenceStatus": "supported",
+      "scoreInterval90": {
+        "lower": 69.09,
+        "upper": 75.11
+      },
+      "orderingMeaning": "Point-estimate order; conditional ranges do not establish rank confidence.",
+      "rankingEligible": true,
+      "overallRank": 16,
+      "url": "https://benchlm.ai/models/qwen3-8-max",
+      "markdownUrl": "https://benchlm.ai/md/models/qwen3-8-max.md",
+      "id": 298,
+      "releaseDate": "2026-08-03",
+      "market": null,
+      "isRegional": false,
+      "family": {
+        "familyKey": "qwen3-8-max",
+        "familyName": "Qwen3.8 Max",
+        "variantType": "base",
+        "snapshotLabel": null,
+        "baseFamilyModelKey": "qwen3-8-max",
+        "relatedModelKeys": [
+          "qwen3-8-max-preview",
+          "qwen3-7-max",
+          "qwen3-6-max-preview"
+        ],
+        "isCanonicalFamilyEntry": true,
+        "supersedesModelKey": "qwen3-8-max-preview"
+      },
+      "scores": {
+        "displayScore": 79,
+        "overallScore": 79,
+        "rawOverallScore": 79,
+        "verifiedDisplayScore": 74,
+        "displayCategoryScores": {
+          "agentic": 83.3,
+          "coding": 68.2,
+          "reasoning": 87.7,
+          "multimodalGrounded": 88.4,
+          "knowledge": 68.6,
+          "multilingual": null,
+          "instructionFollowing": 90.5,
+          "math": null
+        },
+        "verifiedDisplayCategoryScores": {
+          "agentic": 61.8,
+          "coding": 68.1,
+          "reasoning": 87.7,
+          "multimodalGrounded": 88.4,
+          "knowledge": 68.1,
+          "multilingual": null,
+          "instructionFollowing": 90.5,
+          "math": null
+        }
+      },
+      "ranking": {
+        "rankingEligible": true,
+        "verifiedRankingEligible": true,
+        "overallRank": 16,
+        "categoryRanks": {
+          "agentic": 14,
+          "coding": 30,
+          "multimodalGrounded": 5,
+          "knowledge": 23,
+          "instructionFollowing": 16
+        },
+        "categoryRankingEligible": {
+          "agentic": true,
+          "coding": true,
+          "reasoning": false,
+          "multimodalGrounded": true,
+          "knowledge": true,
+          "multilingual": false,
+          "instructionFollowing": true,
+          "math": false
+        }
+      },
+      "coverage": {
+        "trustedBenchmarkCount": 55,
+        "verifiedBenchmarkCount": 55,
+        "rankableBenchmarkCount": 17,
+        "generatedBenchmarkCount": 0,
+        "scoreConfidence": 3
+      },
+      "benchmarks": {
+        "agentic": {
+          "terminalBench21": 86.6,
+          "coworkBench": 74.8,
+          "jobBench": 53.4,
+          "skillsBench": 70.2,
+          "agentsLastExam": 52.4,
+          "automationBench": 27.3,
+          "toolathlonVerified": 72.5,
+          "wideResearch": 81.9,
+          "hleWithTools": 56.2,
+          "osWorldVerified": 86.1,
+          "osWorld2": 19.4,
+          "webArenaVerified": 66.8,
+          "androidWorld": 85.3,
+          "mobileWorld": 77.8,
+          "valsTerminalBench21": 67.4
+        },
+        "coding": {
+          "terminalBench21": 86.6,
+          "swePro": 67.7,
+          "deepSwe": 56.6,
+          "nl2Repo": 55.9,
+          "frontierSwe": 73.5,
+          "mlsBenchLite": 41,
+          "paperBench": 93,
+          "qwenReactBench": 1724,
+          "vulcanBench": 81.2,
+          "openHarmonyBench": 60.8,
+          "frontierSweV2": 15.8,
+          "valsLiveCodeBench": 87.9,
+          "valsSweBench": 85.6
+        },
+        "reasoning": {
+          "mrcrv2": 92.9,
+          "longBenchV2": 66.3
+        },
+        "multimodalGrounded": {
+          "mmmuPro": 82.3,
+          "mathVision": 95.2,
+          "mathVisionPython": 97.7,
+          "babyVision": 82,
+          "babyVisionPython": 91.3,
+          "zeroBench": 24,
+          "zeroBenchPython": 49,
+          "medXpertQaMm": 80.4,
+          "screenSpotPro": 84.5,
+          "vision2Web": 69,
+          "charxivNoTools": 88.4,
+          "charxiv": 93.5,
+          "omniDocBench15": 92.1,
+          "ocrBenchV2": 74.2,
+          "ccOcr": 79.6,
+          "realWorldQa": 88,
+          "erqa": 77.8,
+          "simpleVqa": 75,
+          "perceptionBench": 63.5,
+          "videoMmeWithSub": 90.4,
+          "videoMmmu": 88.7,
+          "mmvu": 82.4,
+          "mlvuAvg": 90.8,
+          "lvBench": 81.8
+        },
+        "knowledge": {
+          "gpqa": 92.6,
+          "gpqaDiamond": 92.6,
+          "hle": 43.6,
+          "hleNoTools": 43.6,
+          "valsGpqaDiamond": 93.7,
+          "valsMmluPro": 88.6
+        },
+        "multilingual": {},
+        "instructionFollowing": {
+          "ifBench": 82.8
+        },
+        "math": {}
+      },
+      "benchmarkSources": {
+        "agentic": {
+          "valsTerminalBench21": {
+            "publisher": "Vals AI",
+            "publisherUrl": "https://www.vals.ai/",
+            "sourceLabel": "Vals AI",
+            "sourceRole": "published-evaluation-results",
+            "scope": "Published leaderboard aggregates and evaluation settings only. Dataset contents are not included.",
+            "datasetContentsIncluded": false,
+            "licenseGrantIncluded": false,
+            "label": "Vals AI: Terminal-Bench 2.1 leaderboard",
+            "url": "https://www.vals.ai/models/alibaba_qwen3.8-max",
+            "benchmarkUrl": "https://www.vals.ai/benchmarks/terminal-bench-2-1",
+            "retrievedAt": null
+          }
+        },
+        "coding": {
+          "valsLiveCodeBench": {
+            "publisher": "Vals AI",
+            "publisherUrl": "https://www.vals.ai/",
+            "sourceLabel": "Vals AI",
+            "sourceRole": "published-evaluation-results",
+            "scope": "Published leaderboard aggregates and evaluation settings only. Dataset contents are not included.",
+            "datasetContentsIncluded": false,
+            "licenseGrantIncluded": false,
+            "label": "Vals AI: LiveCodeBench leaderboard",
+            "url": "https://www.vals.ai/models/alibaba_qwen3.8-max",
+            "benchmarkUrl": "https://www.vals.ai/benchmarks/lcb",
+            "retrievedAt": null
+          },
+          "valsSweBench": {
+            "publisher": "Vals AI",
+            "publisherUrl": "https://www.vals.ai/",
+            "sourceLabel": "Vals AI",
+            "sourceRole": "published-evaluation-results",
+            "scope": "Published leaderboard aggregates and evaluation settings only. Dataset contents are not included.",
+            "datasetContentsIncluded": false,
+            "licenseGrantIncluded": false,
+            "label": "Vals AI: SWE-bench leaderboard",
+            "url": "https://www.vals.ai/models/alibaba_qwen3.8-max",
+            "benchmarkUrl": "https://www.vals.ai/benchmarks/swebench",
+            "retrievedAt": null
+          }
+        },
+        "knowledge": {
+          "valsGpqaDiamond": {
+            "publisher": "Vals AI",
+            "publisherUrl": "https://www.vals.ai/",
+            "sourceLabel": "Vals AI",
+            "sourceRole": "published-evaluation-results",
+            "scope": "Published leaderboard aggregates and evaluation settings only. Dataset contents are not included.",
+            "datasetContentsIncluded": false,
+            "licenseGrantIncluded": false,
+            "label": "Vals AI: GPQA Diamond leaderboard",
+            "url": "https://www.vals.ai/models/alibaba_qwen3.8-max",
+            "benchmarkUrl": "https://www.vals.ai/benchmarks/gpqa",
+            "retrievedAt": null
+          },
+          "valsMmluPro": {
+            "publisher": "Vals AI",
+            "publisherUrl": "https://www.vals.ai/",
+            "sourceLabel": "Vals AI",
+            "sourceRole": "published-evaluation-results",
+            "scope": "Published leaderboard aggregates and evaluation settings only. Dataset contents are not included.",
+            "datasetContentsIncluded": false,
+            "licenseGrantIncluded": false,
+            "label": "Vals AI: MMLU Pro leaderboard",
+            "url": "https://www.vals.ai/models/alibaba_qwen3.8-max",
+            "benchmarkUrl": "https://www.vals.ai/benchmarks/mmlu_pro",
+            "retrievedAt": null
+          }
+        }
+      }
+    }
+  ],
+  "sample_note": "Representative selection of five unchanged items; source counts describe the original full export."
+}
