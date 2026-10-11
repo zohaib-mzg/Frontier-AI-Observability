@@ -848,7 +848,7 @@ Five tables in the `ops` schema record what the pipeline does.
 | `drift_id` | STRING | Unique id |
 | `run_id` | STRING | Id of the notebook or collector run |
 | `batch_id` | STRING | Collector batch |
-| `dataset` | STRING | For Silver, silver/<table> |
+| `dataset` | STRING | For Silver, `silver/<table>` |
 | `source_file` | STRING | Path of the landed file |
 | `column_name` | STRING | Column concerned |
 | `event_type` | STRING | BASELINE, NEW_COLUMN, MISSING_COLUMN, COMPLEX_TYPE, NEW_COLUMN_NOT_PROMOTED or CAST_FAILURE |
