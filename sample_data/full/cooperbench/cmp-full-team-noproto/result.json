@@ -1,0 +1,70 @@
+{
+  "repo": "pallets_click_task",
+  "task_id": 2800,
+  "features": [
+    2,
+    5
+  ],
+  "setting": "team",
+  "run_id": "91863837",
+  "run_name": "cmp-full-team-noproto",
+  "agent_framework": "codex",
+  "model": "gpt-5.5-hao",
+  "started_at": "2026-05-23T11:18:58.377801",
+  "ended_at": "2026-05-23T11:25:45.851575",
+  "duration_seconds": 407.473774,
+  "lead_agent": "agent1",
+  "agents": {
+    "agent2": {
+      "feature_id": 5,
+      "team_role": "member",
+      "status": "Submitted",
+      "cost": 0.0,
+      "steps": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "patch_lines": 106,
+      "error": null
+    },
+    "agent1": {
+      "feature_id": 2,
+      "team_role": "lead",
+      "status": "Submitted",
+      "cost": 0.0,
+      "steps": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "patch_lines": 170,
+      "error": null
+    }
+  },
+  "total_cost": 0.0,
+  "total_steps": 0,
+  "messages_sent": 0,
+  "metrics": {
+    "tasks_total": 4,
+    "tasks_done": 4,
+    "unowned_at_end": 0,
+    "time_to_first_claim_seconds": 23.075,
+    "claims_per_agent": {
+      "agent2": 1,
+      "agent1": 2
+    },
+    "updates_per_agent": {
+      "agent1": 4,
+      "agent2": 2
+    }
+  },
+  "team_features": {
+    "task_list": true,
+    "scratchpad": true,
+    "mcp": true,
+    "auto_refresh": true,
+    "protocol": false
+  },
+  "log_dir": "logs/cmp-full-team-noproto/team/pallets_click_task/2800/f2_f5"
+}

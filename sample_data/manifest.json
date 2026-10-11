@@ -1,0 +1,192 @@
+{
+  "checked_on": "2026-10-03",
+  "measurement": "Original source payload bytes; decimal MB. Representative samples do not determine compliance.",
+  "sources": [
+    {
+      "name": "agent-full-00000-of-00001.parquet",
+      "source": "Arena",
+      "revision": "7d2d9009b2ba84383deb6f1b70e66f85b7cda4e7",
+      "original_bytes": 71464,
+      "rows": 1480,
+      "minimum_publication": "2026-06-04",
+      "maximum_publication": "2026-09-30",
+      "sha256": "2fdc9a42f3eadb583697613fee16783eb559b66a374616ed711227fe87ac54a4",
+      "source_url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/7d2d9009b2ba84383deb6f1b70e66f85b7cda4e7/agent/full-00000-of-00001.parquet"
+    },
+    {
+      "name": "text-full-00000-of-00001.parquet",
+      "source": "Arena",
+      "revision": "7d2d9009b2ba84383deb6f1b70e66f85b7cda4e7",
+      "original_bytes": 57679352,
+      "rows": 1157599,
+      "minimum_publication": "2023-05-08",
+      "maximum_publication": "2026-09-30",
+      "sha256": "d02b43f6a738517df782735b37e0bec733d8f239ffc4b8a8c071785a63317b6c",
+      "source_url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/7d2d9009b2ba84383deb6f1b70e66f85b7cda4e7/text/full-00000-of-00001.parquet"
+    },
+    {
+      "name": "text_style_control-full-00000-of-00001.parquet",
+      "source": "Arena",
+      "revision": "7d2d9009b2ba84383deb6f1b70e66f85b7cda4e7",
+      "original_bytes": 51094948,
+      "rows": 1016009,
+      "minimum_publication": "2024-08-28",
+      "maximum_publication": "2026-09-30",
+      "sha256": "37344e0790dd7399a2a0971475ea288606fba7ec4e0815ba37360f7c487604da",
+      "source_url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/7d2d9009b2ba84383deb6f1b70e66f85b7cda4e7/text_style_control/full-00000-of-00001.parquet"
+    },
+    {
+      "name": "webdev-full-00000-of-00001.parquet",
+      "source": "Arena",
+      "revision": "7d2d9009b2ba84383deb6f1b70e66f85b7cda4e7",
+      "original_bytes": 1153614,
+      "rows": 25712,
+      "minimum_publication": "2025-11-12",
+      "maximum_publication": "2026-10-01",
+      "sha256": "06fbf611cddd128c7c75fb338caaa3eabb1eb5feb7db6328fa195056ee7225ab",
+      "source_url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/7d2d9009b2ba84383deb6f1b70e66f85b7cda4e7/webdev/full-00000-of-00001.parquet"
+    },
+    {
+      "name": "cmp-full-coopgit.tar.gz",
+      "source": "CooperBench/team-trajectories",
+      "revision": "dd371629174a226ecd251672af315699b77de05d",
+      "original_bytes": 30514821,
+      "sha256": "f687e96cafecddad2b5bc5eb303ea254943a37cd3d128f1998d1f1438904727a",
+      "source_url": "https://huggingface.co/datasets/CooperBench/team-trajectories/resolve/dd371629174a226ecd251672af315699b77de05d/cmp-full-coopgit.tar.gz"
+    },
+    {
+      "name": "cmp-full-solo.tar.gz",
+      "source": "CooperBench/team-trajectories",
+      "revision": "dd371629174a226ecd251672af315699b77de05d",
+      "original_bytes": 14531429,
+      "sha256": "b703e921d161aa30ead2eccaad23ffa7c45b4fe6b4f59e6a7e27ce537b331cc0",
+      "source_url": "https://huggingface.co/datasets/CooperBench/team-trajectories/resolve/dd371629174a226ecd251672af315699b77de05d/cmp-full-solo.tar.gz"
+    },
+    {
+      "name": "cmp-full-team-noproto.tar.gz",
+      "source": "CooperBench/team-trajectories",
+      "revision": "dd371629174a226ecd251672af315699b77de05d",
+      "original_bytes": 30695468,
+      "sha256": "8206656ef5a9989987ddfbcb9ac86e80c787382ff0b74b56004c311801ae36cd",
+      "source_url": "https://huggingface.co/datasets/CooperBench/team-trajectories/resolve/dd371629174a226ecd251672af315699b77de05d/cmp-full-team-noproto.tar.gz"
+    },
+    {
+      "name": "cmp-full-team.tar.gz",
+      "source": "CooperBench/team-trajectories",
+      "revision": "dd371629174a226ecd251672af315699b77de05d",
+      "original_bytes": 30632667,
+      "sha256": "fbed57e18cf3b14f3f10e3f3abeecd15c741b949ea9bdefe2464951ee325267f",
+      "source_url": "https://huggingface.co/datasets/CooperBench/team-trajectories/resolve/dd371629174a226ecd251672af315699b77de05d/cmp-full-team.tar.gz"
+    }
+  ],
+  "samples": [
+    {
+      "path": "data/samples/full/arena/agent-full-00000-of-00001.parquet",
+      "bytes": 10354,
+      "sha256": "53f2c21e292ed344eff40ac5970018478ba2dd2b96eb7eae2924a321d4cdf6a8",
+      "kind": "Historical representative row subset; reserialized Parquet preserving source schema and values",
+      "rows": 100
+    },
+    {
+      "path": "data/samples/full/arena/text-full-00000-of-00001.parquet",
+      "bytes": 11561,
+      "sha256": "be65b169153250df1c2ffacb9151688f281db5da943a1851cb116687e56985b2",
+      "kind": "Historical representative row subset; reserialized Parquet preserving source schema and values",
+      "rows": 100
+    },
+    {
+      "path": "data/samples/full/arena/text_style_control-full-00000-of-00001.parquet",
+      "bytes": 11589,
+      "sha256": "a0bae5e3177fb6278dc4b960244d7262aeddfbab38174b6c754e02571249081b",
+      "kind": "Historical representative row subset; reserialized Parquet preserving source schema and values",
+      "rows": 100
+    },
+    {
+      "path": "data/samples/full/arena/webdev-full-00000-of-00001.parquet",
+      "bytes": 11334,
+      "sha256": "d8e2d20c09fd1d972200c1eeccb104cfa3ac913ed4665ef6887fe19becd37ecb",
+      "kind": "Historical representative row subset; reserialized Parquet preserving source schema and values",
+      "rows": 100
+    },
+    {
+      "path": "data/samples/incremental/arena/agent-latest-00000-of-00001.parquet",
+      "bytes": 8052,
+      "sha256": "f4162eee424c42bf2a1ef15a1da423a04ca140051cc6b8c4a534b8af3e116e3f",
+      "kind": "Unchanged complete native source file",
+      "revision": "46919c467f7f93d9609b668a283bcd20d87c28bc",
+      "rows": 50,
+      "source_url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/46919c467f7f93d9609b668a283bcd20d87c28bc/agent/latest-00000-of-00001.parquet"
+    },
+    {
+      "path": "data/samples/incremental/arena/text-latest-00000-of-00001.parquet",
+      "bytes": 605667,
+      "sha256": "22d2dc485b30a5fcb4d6f29b63012fe382891dceacfd75c214631a14d5786151",
+      "kind": "Unchanged complete native source file",
+      "revision": "46919c467f7f93d9609b668a283bcd20d87c28bc",
+      "rows": 10923,
+      "source_url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/46919c467f7f93d9609b668a283bcd20d87c28bc/text/latest-00000-of-00001.parquet"
+    },
+    {
+      "path": "data/samples/incremental/arena/text_style_control-latest-00000-of-00001.parquet",
+      "bytes": 606130,
+      "sha256": "11149e9035241fabaa1158873e43c398f98ed81ff747c24328ec87913e6091a5",
+      "kind": "Unchanged complete native source file",
+      "revision": "46919c467f7f93d9609b668a283bcd20d87c28bc",
+      "rows": 10923,
+      "source_url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/46919c467f7f93d9609b668a283bcd20d87c28bc/text_style_control/latest-00000-of-00001.parquet"
+    },
+    {
+      "path": "data/samples/full/cooperbench/cmp-full-coopgit/result.json",
+      "bytes": 1040,
+      "sha256": "2daa522d4db6f7781e8d6019f36f32e6172c8770a092ae9ad7dfdd8ce3ea961f",
+      "kind": "Unmodified archive member",
+      "archive_member": "cmp-full-coopgit/coop/pallets_click_task/2800/f2_f5/result.json"
+    },
+    {
+      "path": "data/samples/full/cooperbench/cmp-full-solo/result.json",
+      "bytes": 678,
+      "sha256": "4e815c0982b3f53a209e2e09443aff60fb2d9e0b99d8803bd5952c9c5bbd4b52",
+      "kind": "Unmodified archive member",
+      "archive_member": "cmp-full-solo/solo/pallets_click_task/2800/f2_f5/result.json"
+    },
+    {
+      "path": "data/samples/full/cooperbench/cmp-full-team-noproto/result.json",
+      "bytes": 1541,
+      "sha256": "72b87cb7914b3fe7f7f8f3b7bc6cb12178db7709d67ee1185a5afe91927ae412",
+      "kind": "Unmodified archive member",
+      "archive_member": "cmp-full-team-noproto/team/pallets_click_task/2800/f2_f5/result.json"
+    },
+    {
+      "path": "data/samples/full/cooperbench/cmp-full-team/result.json",
+      "bytes": 1505,
+      "sha256": "0998293c826898fa9d62777a2c022f11085ca629ed0cdd9a978b275d61a3214a",
+      "kind": "Unmodified archive member",
+      "archive_member": "cmp-full-team/team/pallets_click_task/2800/f2_f5/result.json"
+    },
+    {
+      "path": "data/samples/full/benchlm/models.json",
+      "bytes": 53926,
+      "sha256": "d733c7a383a0d92e7844cf3638d8e621357060953a9f6f595c23179e53f2066a",
+      "kind": "Representative JSON subset with source-level attribution retained; not an original complete export",
+      "source_url": "https://benchlm.ai/data/models.json"
+    },
+    {
+      "path": "data/samples/full/benchlm/benchmarks.json",
+      "bytes": 20841,
+      "sha256": "4a8fc6f3a9a5b911d231fe31883a94abf63137c552f7c511d46678122f2231ff",
+      "kind": "Representative JSON subset with source-level attribution retained; not an original complete export",
+      "source_url": "https://benchlm.ai/data/benchmarks.json"
+    },
+    {
+      "path": "data/samples/full/benchlm/pricing.json",
+      "bytes": 4773,
+      "sha256": "6bff73433c87e09d7120f20095fe8108cd2b074fd67456e8cc3095d0a803d893",
+      "kind": "Representative JSON subset with source-level attribution retained; not an original complete export",
+      "source_url": "https://benchlm.ai/data/pricing.json"
+    }
+  ],
+  "full_baseline_original_bytes": 216373763,
+  "incremental_original_bytes": 1219849,
+  "core_arena_rows": 2200800,
+  "incremental_rows": 21896
+}
