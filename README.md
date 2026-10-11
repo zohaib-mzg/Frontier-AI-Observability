@@ -20,7 +20,7 @@
 <img alt="License" src="https://img.shields.io/badge/Code%20licence-MIT-lightgrey?style=flat-square">
 </p>
 
-[Overview](#overview) &nbsp;|&nbsp; [Architecture](#architecture) &nbsp;|&nbsp; [Data sources](#data-sources) &nbsp;|&nbsp; [Quick start](#quick-start) &nbsp;|&nbsp; [Execution guide](#execution-guide) &nbsp;|&nbsp; [Bronze models](#bronze-data-models) &nbsp;|&nbsp; [Silver models](#silver-data-models) &nbsp;|&nbsp; [Audit and logging](#audit-and-logging)
+[Overview](#overview) &nbsp;|&nbsp; [Architecture](#architecture) &nbsp;|&nbsp; [Data sources](#data-sources) &nbsp;|&nbsp; [Quick start](#quick-start) &nbsp;|&nbsp; [Execution guide](#execution-guide) &nbsp;|&nbsp; [Bronze models](#bronze-data-models) &nbsp;|&nbsp; [Silver models](#silver-data-models) &nbsp;|&nbsp; [Audit and logging](#audit-and-logging) &nbsp;|&nbsp; [Proof](#proof)
 
 </div>
 
@@ -129,18 +129,33 @@ The schedule follows how often the sources change. Epoch updates daily, BenchLM 
 ## Repository layout
 
 ```text
-.github/workflows/frontier-collect.yml     GitHub Actions: smoke, full and incremental collection
-ingestion/frontier_collect.py              Collector: source to volume, manifest, state
-notebooks/00_setup_databricks.ipynb        One-time setup: five schemas, the volume and its folders
-spark/bronze/frontier_bronze_load.ipynb    Raw files to Bronze (parameterised, backfill, replay)
-spark/bronze/frontier_bronze_proof.ipynb   Bronze proof: schemas, MERGE, backfill, drift, replay, key check
-spark/silver/frontier_silver_load.ipynb    Bronze to Silver (parameterised, backfill, replay, quarantine)
-docs/                                      Run guides and design notes for both layers
-proof/                                     Executed notebooks with their saved outputs
-sample_data/                               Small samples with a manifest and source notices
-proposals/                                 Project proposal documents
-requirements.txt                           Collector dependencies
-README.md
+.
+├── .github/
+│   └── workflows/
+│       └── frontier-collect.yml          GitHub Actions: smoke, full and incremental collection
+├── docs/
+│   ├── Frontier_Bronze_Run_Guide.md      Step-by-step guide for Raw to Bronze, with the Databricks setup
+│   └── Frontier_Silver_Run_Guide.md      Silver decisions, status and plan updates
+├── ingestion/
+│   └── frontier_collect.py               Collector: source to volume, manifest, state
+├── notebooks/
+│   └── 00_setup_databricks.ipynb         One-time setup: five schemas, the volume and its folders
+├── proof/                                Executed Silver notebooks with their saved outputs (see Proof)
+├── proposals/                            Project proposal documents
+├── sample_data/
+│   ├── full/                             Full-load samples: arena, benchlm, cooperbench
+│   ├── incremental/                      Incremental samples: the latest Arena files
+│   ├── manifest.json                     Source revision, size and SHA-256 of every sample
+│   └── README.md
+├── spark/
+│   ├── bronze/
+│   │   └── frontier_bronze_load.ipynb    Raw files to Bronze (parameterised, backfill, replay)
+│   └── silver/
+│       └── frontier_silver_load.ipynb    Bronze to Silver (parameterised, backfill, replay, quarantine)
+├── .gitignore
+├── LICENSE
+├── README.md
+└── requirements.txt
 ```
 
 ---
@@ -910,6 +925,21 @@ Schema changes use `ALTER TABLE ADD COLUMNS` rather than the `mergeSchema` optio
 - **One Arena model appears twice per day.** `gpt-5.3-codex (codex-harness)` has two different entries under one name in `webdev`. Silver keeps the one with more votes and quarantines the other.
 - **Epoch has 57 columns.** Ten are in the contract, 47 were added automatically. 24 rows hold two numbers in the training dataset size and become null with a logged `CAST_FAILURE`. 12 models have no publication date and are quarantined.
 - **BenchLM keys differ per export.** A benchmark key can sit in two categories, and pricing has no `slug` for some models, so the keys are `slug`, `benchmarkKey` plus `category`, and `canonicalModelKey`.
+
+---
+
+## Proof
+
+Executed notebooks with their saved outputs are in `proof/`.
+
+| Notebook | Shows |
+|---|---|
+| `frontier_silver_proof_01_first_load.ipynb` | Explicit schemas (`DESCRIBE TABLE`), the first Silver load, quarantine, drift events and log rows |
+| `frontier_silver_proof_02_arena_agent_rating_fix.ipynb` | A corrected rule: 666 agent rows loaded and the old quarantine entries released |
+| `frontier_silver_proof_03_rerun_benchlm_idempotent.ipynb` | Same input again: 0 inserted, 0 updated |
+| `frontier_silver_proof_04_rerun_cooperbench_idempotent.ipynb` | Same input again: 0 inserted, 0 updated |
+| `frontier_silver_proof_05_rerun_all_idempotent.ipynb` | All eight tables again: 0 changes, 0 duplicate keys, and the log layers |
+| `frontier_silver_proof_06_backfill_batch_range.ipynb` | A run with `from_batch` and `to_batch` set |
 
 ---
 
