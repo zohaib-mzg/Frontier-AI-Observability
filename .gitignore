@@ -3,6 +3,8 @@
 *.token
 secrets*
 
+Power_BI_Dashboard/*.pbix
+
 # Files made while testing
 output/
 state/
